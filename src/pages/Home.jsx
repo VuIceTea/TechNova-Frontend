@@ -5,16 +5,20 @@ import FeatureSection from "../components/FeatureSection";
 import { getFeatures } from "../services/featureService";
 import CategorySection from "../components/CategorySection";
 import { getCategories } from "../services/categoryService";
+import ProductSection from "../components/ProductSection";
+import { getProducts } from "../services/productService";
 
 const Home = () => {
     const [banners, setBanners] = useState([]);
     const [features, setFeatures] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
         getBanners().then(setBanners);
         getFeatures().then(setFeatures);
         getCategories().then(setCategories);
+        getProducts().then(setProducts);
     }, []);
 
     return (
@@ -27,6 +31,9 @@ const Home = () => {
 
             {/* Category Section */}
             <CategorySection categories={categories} />
+
+            {/* Product Section */}
+            <ProductSection products={products} />
         </>
     );
 }
