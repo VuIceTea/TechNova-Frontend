@@ -14,7 +14,7 @@ const iconMap = {
 export default function FeatureSection({ features }) {
     return (
         <section
-            className="w-full mx-auto max-w-350 mb-16"
+            className="w-full mx-auto max-w-350 px-2 md:px-4 mb-16"
         >
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
                 {features.map((feature) => {
