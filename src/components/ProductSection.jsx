@@ -6,7 +6,6 @@ import StarIcon from '@mui/icons-material/Star';
 export default function ProductSection({ products }) {
     const handlePrevClick = () => {
         // Logic for previous button click
-
     }
 
     const handleNextClick = () => {
