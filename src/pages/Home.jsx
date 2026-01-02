@@ -10,6 +10,7 @@ import { getProducts } from "../services/productService";
 import PromoSection from "../components/PromoSection";
 import { getPromoBanners } from "../services/promoService";
 import NewsSection from "../components/NewsSection";
+import TestimonialsSection from "../components/TestimonialsSection";
 
 const Home = () => {
     const [banners, setBanners] = useState([]);
@@ -45,6 +46,9 @@ const Home = () => {
 
             {/* News Section */}
             <NewsSection />
+
+            {/* Testimonials Section */}
+            <TestimonialsSection />
         </>
     );
 }
