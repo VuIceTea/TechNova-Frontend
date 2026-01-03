@@ -1,15 +1,30 @@
-import React from "react";
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'; import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import StarIcon from '@mui/icons-material/Star';
 
 export default function ProductSection({ products }) {
+    const scrollContainerRef = useRef(null);
+
     const handlePrevClick = () => {
-        // Logic for previous button click
+        if (scrollContainerRef.current) {
+            const scrollAmount = scrollContainerRef.current.offsetWidth;
+            scrollContainerRef.current.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 
     const handleNextClick = () => {
-        // Logic for next button click
+        if (scrollContainerRef.current) {
+            const scrollAmount = scrollContainerRef.current.offsetWidth;
+            scrollContainerRef.current.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     }
 
     return (
@@ -18,14 +33,14 @@ export default function ProductSection({ products }) {
                 <h2 className="text-white text-2xl leading-tight font-bold tracking-[-0.015em]">Sản phẩm bán chạy</h2>
                 <div className="flex items-center gap-2">
                     <button
-                        className="w-8 h-8 bg-[#282e39] rounded-full hover:bg-[#135bec] cursor-pointer transition-colors"
+                        className="w-8 h-8 bg-[#282e39] rounded-full hover:bg-[#135bec] cursor-pointer transition-colors flex items-center justify-center"
                         onClick={handlePrevClick}
                     >
                         <ChevronLeftIcon className="text-white" fontSize="small" />
                     </button>
 
                     <button
-                        className="w-8 h-8 bg-[#282e39] rounded-full hover:bg-[#135bec] cursor-pointer transition-colors"
+                        className="w-8 h-8 bg-[#282e39] rounded-full hover:bg-[#135bec] cursor-pointer transition-colors flex items-center justify-center"
                         onClick={handleNextClick}
                     >
                         <ChevronRightIcon className="text-white" fontSize="small" />
@@ -33,33 +48,51 @@ export default function ProductSection({ products }) {
                 </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-4 overflow-hidden">
+            <div
+                ref={scrollContainerRef}
+                className="flex gap-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
                 {products.map((product) => {
-                    const thumbnail = product.variants[0].images[0];
-                    const variant = product.variants[0];
-                    const originalPrice = variant.originalPrice;
-                    const discountPercent = variant.discountPercent || 0;
-                    const discountedPrice = originalPrice * (1 - discountPercent / 100);
+                    const thumbnail = product.image;
+                    const originalPrice = product.originalPrice || product.price;
+                    const discountPercent = product.discountPercent || 0;
+                    const discountedPrice = product.price;
 
                     return (
-                        <div
-                            className="relative gap-4 flex flex-col border border-solid border-[#282e39] rounded-lg bg-[#1c1f27]/50 backdrop-blur-sm cursor-pointer hover:bg-[#135bec]/10 transition-colors overflow-hidden"
+                        <Link
+                            to={`/product/${product.slug}`}
+                            className="relative shrink-0 w-70 md:w-55 flex flex-col border border-solid border-[#282e39] rounded-lg bg-[#1c1f27]/50 backdrop-blur-sm cursor-pointer hover:bg-[#135bec]/10 transition-colors overflow-hidden"
                             key={product.id}
                         >
-                            {variant.discountPercent > 0 && (
-                                <span className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded z-10">
-                                    -{variant.discountPercent}%
-                                </span>
-                            )}
+                            <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
+                                {product.badges?.includes('hot') && (
+                                    <span className="bg-linear-to-r from-orange-500 to-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                        🔥 HOT
+                                    </span>
+                                )}
+                                {product.badges?.includes('new') && (
+                                    <span className="bg-linear-to-r from-blue-500 to-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                        ✨ MỚI
+                                    </span>
+                                )}
+                                {product.discountPercent > 0 && (
+                                    <span className="bg-linear-to-r from-red-600 to-red-700 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                        -{product.discountPercent}%
+                                    </span>
+                                )}
+                            </div>
 
-                            <img
-                                src={thumbnail}
-                                alt={product.name}
-                                className="w-full object-cover"
-                            />
+                            <div className="w-full aspect-square bg-white/5 overflow-hidden">
+                                <img
+                                    src={thumbnail}
+                                    alt={product.name}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
 
-                            <div className="px-4 pb-4 flex flex-col gap-2">
-                                <h3 className="text-white font-bold text-sm line-clamp-1">{product.name}</h3>
+                            <div className="px-4 py-4 flex flex-col gap-2">
+                                <h3 className="text-white font-bold text-sm line-clamp-2 min-h-10">{product.name}</h3>
                                 <span className="text-xs font-normal text-[#9da6b9] flex items-center gap-1">
                                     <StarIcon className="text-yellow-400 inline-block mb-0.5" fontSize="small" />
                                     {product.rating}
@@ -82,7 +115,7 @@ export default function ProductSection({ products }) {
                                     )}
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     );
                 })}
             </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -28,8 +29,8 @@ const Header = () => {
                 </button>
 
                 <nav className="hidden lg:flex items-center gap-9 ml-9">
-                    <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Trang chủ</a>
-                    <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Sản phẩm</a>
+                    <Link to="/" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Trang chủ</Link>
+                    <Link to="/category" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Sản phẩm</Link>
                     <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Khuyến mãi</a>
                     <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Hỗ trợ</a>
                 </nav>
