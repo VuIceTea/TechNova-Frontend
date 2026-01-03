@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import BannerCarousel from "../components/Banner/BannerCarousel";
 import { getBanners } from "../services/bannerService";
 import FeatureSection from "../components/FeatureSection";

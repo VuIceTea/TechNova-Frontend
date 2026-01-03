@@ -1,0 +1,250 @@
+.productCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #1e2430;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.productCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: #135bec;
+}
+
+.badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.badgeNew {
+  padding: 4px 8px;
+  background: #135bec;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.badgeSale {
+  padding: 4px 8px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #151921;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.productCard:hover .image {
+  transform: scale(1.05);
+}
+
+/* Hover Actions */
+.hoverActions {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.productCard:hover .hoverActions {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.actionButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #282e39;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.actionButton:hover {
+  background: white;
+}
+
+.actionIcon {
+  font-size: 20px !important;
+  color: white;
+}
+
+.actionButton:hover .actionIcon {
+  color: #135bec;
+}
+
+.content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.brandLabel {
+  font-size: 12px;
+  color: #9da6b9;
+  margin-bottom: 4px;
+}
+
+.name {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+}
+
+.name:hover {
+  color: #135bec;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFilled {
+  font-size: 16px !important;
+  color: #fbbf24;
+  fill: currentColor;
+}
+
+.starEmpty {
+  font-size: 16px !important;
+  color: #4b5563;
+}
+
+.reviewCount {
+  font-size: 12px;
+  color: #9da6b9;
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.spec {
+  padding: 2px 8px;
+  background-color: #282e39;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #9da6b9;
+  font-weight: 500;
+}
+
+.priceSection {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #282e39;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #135bec;
+}
+
+.originalPrice {
+  font-size: 12px;
+  color: #9da6b9;
+  text-decoration: line-through;
+}
+
+.addToCart {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #135bec;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(19, 91, 236, 0.2);
+  flex-shrink: 0;
+}
+
+.addToCart:hover {
+  background: #0e46b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(19, 91, 236, 0.4);
+}
+
+.addToCart:active {
+  transform: translateY(0);
+}
+
+.cartIcon {
+  font-size: 20px !important;
+  color: white;
+}

@@ -1,0 +1,183 @@
+.categoryPage {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.productsSection {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.titleSection {
+  flex: 1;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #9da6b9;
+  margin: 0;
+}
+
+.sortSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sortLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9da6b9;
+  white-space: nowrap;
+}
+
+.sortSelect {
+  appearance: none;
+  background: #282e39;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 10px 36px 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 200px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%239da6b9' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.sortSelect:focus {
+  outline: 2px solid #135bec;
+  outline-offset: 2px;
+}
+
+/* Active Filters Chips */
+.activeFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.filterChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #282e39;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterChip:hover {
+  background: #323a46;
+}
+
+.chipIcon {
+  font-size: 18px !important;
+  color: white;
+}
+
+.chipText {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.chipClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  transition: color 0.2s;
+  color: #9da6b9;
+}
+
+.chipClose:hover {
+  color: #ef4444;
+}
+
+.closeIcon {
+  font-size: 16px !important;
+}
+
+.clearAll {
+  font-size: 14px;
+  color: #9da6b9;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.2s;
+}
+
+.clearAll:hover {
+  color: #135bec;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 1200px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .sortSection {
+    width: 100%;
+  }
+}

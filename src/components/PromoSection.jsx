@@ -110,8 +110,8 @@ export default function PromoSection({ promo }) {
                         </a>
                     </div>
 
-                    {/* Countdown Circle - Responsive positioning */}
-                    <div className="absolute right-4 top-4 md:right-16 md:top-1/2 md:-translate-y-1/2">
+                    {/* Countdown Circle */}
+                    <div className="absolute right-4 top--1 -translate-y-1/2 md:right-16">
                         <div className="relative">
                             {/* Circle Background */}
                             <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-56 md:h-56 rounded-full bg-white/10 backdrop-blur-sm flex flex-col items-center justify-center border border-white/20">
