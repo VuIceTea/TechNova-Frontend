@@ -45,7 +45,7 @@ const Header = () => {
                             <SearchIcon fontSize="small" />
                         </div>
                         <input
-                            className="flex-1 bg-transparent px-4 pl-2 text-sm text-white placeholder:text-[#9da6b9] focus:outline-none"
+                            className="flex-1 bg-transparent px-4 pl-2 text-sm text-white placeholder:text-[#9da6b9] focus:outline-none border-none focus:ring-0"
                             placeholder="Tìm kiếm sản phẩm..."
                             onChange={handleSearchChange}
                             value={keyword}

@@ -67,17 +67,26 @@ export default function ProductSection({ products }) {
                         >
                             <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
                                 {product.badges?.includes('hot') && (
-                                    <span className="bg-linear-to-r from-orange-500 to-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                    <span
+                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        style={{ background: 'linear-gradient(to right, #f97316, #dc2626)' }}
+                                    >
                                         🔥 HOT
                                     </span>
                                 )}
                                 {product.badges?.includes('new') && (
-                                    <span className="bg-linear-to-r from-blue-500 to-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                    <span
+                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        style={{ background: 'linear-gradient(to right, #3b82f6, #2563eb)' }}
+                                    >
                                         ✨ MỚI
                                     </span>
                                 )}
                                 {product.discountPercent > 0 && (
-                                    <span className="bg-linear-to-r from-red-600 to-red-700 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">
+                                    <span
+                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        style={{ background: 'linear-gradient(to right, #dc2626, #b91c1c)' }}
+                                    >
                                         -{product.discountPercent}%
                                     </span>
                                 )}
