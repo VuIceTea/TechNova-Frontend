@@ -4,8 +4,6 @@ import { mockProducts } from '../data/mockProducts';
 import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -147,7 +145,6 @@ const ProductDetail = () => {
 
                 {/* Product Hero Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12 pb-12 border-b border-gray-200 dark:border-[#282e39]">
-                    {/* Left Column: Gallery */}
                     <div className="lg:col-span-7 flex flex-col gap-4">
                         <div className="w-full aspect-4/3 rounded-xl overflow-hidden bg-gray-100 dark:bg-[#1a2230] border border-gray-200 dark:border-[#282e39] relative group">
                             <div
@@ -160,6 +157,25 @@ const ProductDetail = () => {
                                         -{product.discountPercent}%
                                     </span>
                                 </div>
+                            )}
+                            {/* Navigation Buttons */}
+                            {gallery.length > 1 && (
+                                <>
+                                    <button
+                                        onClick={() => setSelectedImage((prev) => (prev === 0 ? gallery.length - 1 : prev - 1))}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                                        aria-label="Previous image"
+                                    >
+                                        <ChevronLeftIcon />
+                                    </button>
+                                    <button
+                                        onClick={() => setSelectedImage((prev) => (prev === gallery.length - 1 ? 0 : prev + 1))}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                                        aria-label="Next image"
+                                    >
+                                        <ChevronRightIcon />
+                                    </button>
+                                </>
                             )}
                         </div>
                         <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
@@ -264,26 +280,11 @@ const ProductDetail = () => {
 
                         {/* Actions */}
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <div className="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-[#1a2230] w-fit">
-                                <button
-                                    onClick={() => handleQuantityChange(-1)}
-                                    className="px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-l-lg text-gray-600 dark:text-gray-300"
-                                >
-                                    <RemoveIcon style={{ fontSize: 20 }} />
-                                </button>
-                                <input
-                                    className="w-12 text-center bg-transparent border-none text-gray-900 dark:text-white font-bold p-0 focus:ring-0"
-                                    type="text"
-                                    value={quantity}
-                                    readOnly
-                                />
-                                <button
-                                    onClick={() => handleQuantityChange(1)}
-                                    className="px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-r-lg text-gray-600 dark:text-gray-300"
-                                >
-                                    <AddIcon style={{ fontSize: 20 }} />
-                                </button>
-                            </div>
+                            <button
+                                className='bg-[#135bec] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#135bec]/25'
+                            >
+                                Mua ngay
+                            </button>
                             <button
                                 onClick={handleAddToCart}
                                 className="flex-1 bg-[#135bec] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#135bec]/25"

@@ -116,14 +116,21 @@ const Sidebar = ({ filters, onFilterChange }) => {
                 </h3>
                 <div className={styles.priceRange}>
                     <div className={styles.sliderContainer}>
+                        <input
+                            type="range"
+                            min="0"
+                            max="100000000"
+                            step="1000000"
+                            value={maxPrice}
+                            onChange={handleSliderChange}
+                            onMouseUp={applyPriceFilter}
+                            onTouchEnd={applyPriceFilter}
+                            className={styles.slider}
+                        />
                         <div className={styles.sliderTrack}>
                             <div
                                 className={styles.sliderFill}
                                 style={{ width: `${(maxPrice / 50000000) * 100}%` }}
-                            ></div>
-                            <div
-                                className={styles.sliderThumb}
-                                style={{ left: `${(maxPrice / 50000000) * 100}%` }}
                             ></div>
                         </div>
                     </div>

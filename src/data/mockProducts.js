@@ -1,5 +1,5 @@
 export const mockProducts = [
-    // Laptop gaming & MacBook (id 1-10)
+    // Laptop gaming & MacBook 
     {
         id: 1,
         name: "Laptop Asus TUF Gaming F16 FX607VJ",
@@ -19,12 +19,12 @@ export const mockProducts = [
         originalPrice: 24490000,
         discountPercent: 11,
         stock: 20,
-        image: "https://www.asus.com/media/global/SKU/90NR0HV6-M00010/cygmaakobfcl7spp.png",
+        image: "https://cdn.pokde.net/wp-content/uploads/2024/03/xc-20240229_163706.jpg",
         gallery: [
-            "https://www.asus.com/media/global/SKU/90NR0HV6-M00010/cygmaakobfcl7spp.png",
-            "https://dlcdnwebimgs.asus.com/gain/a0d0b3c7-4e2f-4e5c-8a8e-cff3e8fc5c5f/w717/h525",
-            "https://dlcdnwebimgs.asus.com/gain/f64c7c7d-3a0a-4a0c-8a6c-ba2e8e8d5e1f/w717/h525",
-            "https://dlcdnwebimgs.asus.com/gain/c5c8c5c7-3a0a-4a0c-8a6c-ba2e8e8d5e1f/w717/h525"
+            "https://cdn.pokde.net/wp-content/uploads/2024/03/xc-20240229_163706.jpg",
+            "https://microless.com/cdn/products/13b376918ed44bce10857535644dcce3-hi.jpg",
+            "https://microless.com/cdn/products/78190d03b239aba0c23c3b06f7c5818f-hi.jpg",
+            "https://microless.com/cdn/products/452fe407a04ce1de445d0e2fc71eb934-hi.jpg"
         ],
         description: "Laptop Asus TUF Gaming F16 mang đến hiệu năng mạnh mẽ với CPU Intel Core i7 thế hệ mới và GPU RTX 4060, đáp ứng mọi nhu cầu gaming và làm việc. Thiết kế bền bỉ theo tiêu chuẩn quân đội Mỹ MIL-STD-810H.",
         fullDescription: `
@@ -110,7 +110,13 @@ export const mockProducts = [
         originalPrice: 30990000,
         discountPercent: 8,
         stock: 15,
-        image: "https://asset.msi.com/resize/image/global/product/product_16924039845a4650eae389921acb63fc0f7e166f1f.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png"
+        image: "https://asset.msi.com/resize/image/global/product/product_16924039845a4650eae389921acb63fc0f7e166f1f.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        gallery: [
+            "https://asset.msi.com/resize/image/global/product/product_16924039845a4650eae389921acb63fc0f7e166f1f.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+            "https://i.pcmag.com/imagery/reviews/01FIvTZt1sIxZydOira9RYm-5.jpg",
+            "https://www.gadgetpilipinas.net/wp-content/uploads/2023/07/MSI-Katana-15-B13VFK-Review-MSI-Katana-15-RTX-4060-2023-Review.jpg",
+            "https://www.gdgtme.com/wp-content/uploads/2023/03/MSI-Katana-15-B13V-6-1024x768.jpg"
+        ]
     },
     {
         id: 3,
@@ -131,7 +137,13 @@ export const mockProducts = [
         originalPrice: 26990000,
         discountPercent: 7,
         stock: 18,
-        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/58060edb-d464-431f-89da-5e0e803996eb.jpg;maxHeight=1920;maxWidth=900?format=webp"
+        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/58060edb-d464-431f-89da-5e0e803996eb.jpg;maxHeight=1920;maxWidth=900?format=webp",
+        gallery: [
+            "https://images.hothardware.com/contentimages/newsitem/62627/content/acer-nitro-v-15-rear-angled.jpg",
+            "https://reviewcentralme.com/wp-content/uploads/2023/09/Nitro_v15.jpg",
+            "https://images.hothardware.com/contentimages/newsitem/62627/content/16x9_2133x1200_highres-acer-nitro-v.jpg",
+            "https://root-nation.com/wp-content/uploads/2025/01/acer-nitro-v15-anv15-41-r99y-ph61.jpg"
+        ]
     },
     {
         id: 4,
@@ -152,7 +164,13 @@ export const mockProducts = [
         originalPrice: 23990000,
         discountPercent: 13,
         stock: 12,
-        image: "https://m.media-amazon.com/images/I/71sBZzbbbqL._AC_UF894,1000_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/71sBZzbbbqL._AC_UF894,1000_QL80_.jpg",
+        gallery: [
+            "https://laptopmedia.com/wp-content/uploads/2025/01/2-65-e1737565103110.jpg",
+            "https://www.dateks.lv/images/pic/1200/630/385/1800.jpg",
+            "https://laptopmedia.com/wp-content/uploads/2025/06/Lenovo-LOQ-Essential-15-Gen-9-15IAX9E-review-The-Best-Ultra-Budget-Gaming-Laptop.jpg",
+            "https://images.expertreviews.co.uk/wp-content/uploads/2024/08/lenovo_loq_15iax9i_review_front_view.jpg?width=744&height=419&format=webply"
+        ]
     },
     {
         id: 5,
@@ -173,7 +191,13 @@ export const mockProducts = [
         originalPrice: 24045000,
         discountPercent: 11,
         stock: 25,
-        image: "https://m.media-amazon.com/images/I/51M6WboY3BL._AC_UF350,350_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/51M6WboY3BL._AC_UF350,350_QL80_.jpg",
+        gallery: [
+            "https://m.media-amazon.com/images/I/51M6WboY3BL._AC_UF350,350_QL80_.jpg",
+            "https://m.media-amazon.com/images/I/51fUKtubGsL._AC_UF894,1000_QL80_.jpg",
+            "https://m.media-amazon.com/images/I/51N5D9eIwqL._AC_UF894,1000_QL80_.jpg",
+            "https://m.media-amazon.com/images/I/51j1tv8KCdL._AC_UF894,1000_QL80_.jpg"
+        ]
     },
     {
         id: 6,
@@ -194,7 +218,13 @@ export const mockProducts = [
         originalPrice: 46990000,
         discountPercent: 5,
         stock: 8,
-        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6578/6578920_sd.jpg;maxHeight=1920;maxWidth=900?format=webp"
+        image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6578/6578920_sd.jpg;maxHeight=1920;maxWidth=900?format=webp",
+        gallery: [
+            "https://koru-cottage.com/wp-content/uploads/2023/10/ROG-Strix-G16.jpg",
+            "https://www.notebookcheck.net/fileadmin/Notebooks/Asus/ROG_Strix_G16_G614JZ/Asus_ROG_Strix_14.jpg",
+            "https://i.ytimg.com/vi/4P2JxbYLvA4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD-cavYSxazjAo92stT2pMvm5WnYQ",
+            "https://dlcdnwebimgs.asus.com/files/media/71a33ba1-1be2-44c1-9541-70b4c800abf8/v1/images/m-ksp-c_1.webp"
+        ]
     },
     {
         id: 7,
@@ -215,7 +245,13 @@ export const mockProducts = [
         originalPrice: 64990000,
         discountPercent: 9,
         stock: 5,
-        image: "https://asset.msi.com/resize/image/global/product/product_164744992243f3c748034f58032b697bc51f089ea5.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png"
+        image: "https://asset.msi.com/resize/image/global/product/product_164744992243f3c748034f58032b697bc51f089ea5.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+        gallery: [
+            "https://i.ytimg.com/vi/8C3i5CQ6QAU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDQ3ZDtkvnBBcYpQNGjUrsCO1IjGg",
+            "https://assetsio.gnwcdn.com/msi%20ge76%20raider%20main%20image.jpg?width=690&quality=85&format=jpg&dpr=3&auto=webp",
+            "https://www.engineering.com/wp-content/uploads/2024/05/3_thumbnail2.png",
+            "https://c1.neweggimages.com/ProductImageCompressAll300/34-155-720-V85.jpg"
+        ]
     },
     {
         id: 8,
@@ -236,7 +272,13 @@ export const mockProducts = [
         originalPrice: 32990000,
         discountPercent: 9,
         stock: 14,
-        image: "https://m.media-amazon.com/images/I/718c2m76w0L._AC_UF350,350_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/718c2m76w0L._AC_UF350,350_QL80_.jpg",
+        gallery: [
+            "https://b2c-contenthub.com/wp-content/uploads/2024/05/Gigabyte-Aorus-16X-left-angle.jpg?quality=50&strip=all&w=1200",
+            "https://s.yimg.com/ny/api/res/1.2/yqECu9zIS6krrwpD0e8QAg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD04Mjg-/https://o.aolcdn.com/hss/storage/midas/38ec1d6d84d43b6957a7bf1f9c1d75c0/200214005/gigabyte-AORUS-x3-plus.jpg",
+            "https://i.ytimg.com/vi/gnTtRprh0uY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBonYetaufdlIr_-mRRa5AvGEfnAg",
+            "https://www.notebookcheck.net/fileadmin/Notebooks/Aorus/MASTER_16_AM6H/title-4.jpg"
+        ]
     },
     {
         id: 9,
@@ -257,7 +299,13 @@ export const mockProducts = [
         originalPrice: 35990000,
         discountPercent: 11,
         stock: 10,
-        image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g15-5521-se/media-gallery/g15-5521-se-bk-rgbkb-115w/notebook-g-15-5521-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=320&wid=393&qlt=100,1&resMode=sharp2&size=393,320&chrss=full"
+        image: "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/g-series/g15-5521-se/media-gallery/g15-5521-se-bk-rgbkb-115w/notebook-g-15-5521-gallery-1.psd?fmt=png-alpha&pscan=auto&scl=1&hei=320&wid=393&qlt=100,1&resMode=sharp2&size=393,320&chrss=full",
+        gallery: [
+            "https://laptopmedia.com/wp-content/uploads/2023/05/1-55-e1685458987401.jpg",
+            "https://i.insider.com/652eac84be9edfa8eda2c156?width=800&format=jpeg&auto=webp",
+            "https://laptopmedia.com/wp-content/uploads/2021/10/dellg155515featured.jpg",
+            "https://blog.bestbuy.ca/wp-content/uploads/2021/08/DSC00278-min.jpg"
+        ]
     },
     {
         id: 10,
@@ -276,9 +324,15 @@ export const mockProducts = [
         },
         price: 41990000,
         stock: 10,
-        image: "https://i.pcmag.com/imagery/reviews/06VwWWP1ukSWKSgnAATzoRM-1..v1760989347.jpg"
+        image: "https://i.pcmag.com/imagery/reviews/06VwWWP1ukSWKSgnAATzoRM-1..v1760989347.jpg",
+        gallery: [
+            "https://i.pcmag.com/imagery/reviews/06VwWWP1ukSWKSgnAATzoRM-9.fit_lim.size_1050x.jpg",
+            "https://www.macworld.com/wp-content/uploads/2025/04/M4-MacBook-Pros-right-angle.jpg?quality=50&strip=all",
+            "https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2025/10/apple-macbook-pro-14-in-m5-hero.png",
+            "https://cdn.mos.cms.futurecdn.net/cvQtDKDUTNSoy9ycSko8Ve.jpg"
+        ]
     },
-    // Điện thoại (id 11-15)
+    // Phone
     {
         id: 11,
         name: "iPhone 15 Pro Max - Titan Tự Nhiên",
@@ -300,10 +354,10 @@ export const mockProducts = [
         stock: 30,
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD2lBmk9OmvSqPupKWr1P7kknto1pHWZ8zhk_PtKBuzRU1MLeB3_Qc44X8SRwiNtFRVTp1rhd98Jc11cXmlrXkajABq0HKQSjetmj6xxkhA0DKJUXUuXDG-4CGONtn9JqxZaSieyeQdy7d2SCrbHusSMK9ZPQhKCC_OQSA-kCQYZTNuEgsmz_kMR7xPkpPPa5QM-2v7LDuyHzseacMkBzs4sj751dO2dH5K76yEYOvv_Hq1pC0g82icIJvitxJN2sObUC4XuSo9Ql_b",
         gallery: [
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuD2lBmk9OmvSqPupKWr1P7kknto1pHWZ8zhk_PtKBuzRU1MLeB3_Qc44X8SRwiNtFRVTp1rhd98Jc11cXmlrXkajABq0HKQSjetmj6xxkhA0DKJUXUuXDG-4CGONtn9JqxZaSieyeQdy7d2SCrbHusSMK9ZPQhKCC_OQSA-kCQYZTNuEgsmz_kMR7xPkpPPa5QM-2v7LDuyHzseacMkBzs4sj751dO2dH5K76yEYOvv_Hq1pC0g82icIJvitxJN2sObUC4XuSo9Ql_b",
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuBkHstsXCkiHG16bVqcUf39GbeviQsUhzgqufNa8CLZj1DGiwg3GdPJf70SxA1WSa7EkMHdyBGxHGW0hljnvkrZn_XJTBM8Zc28y-tpROX12SeSUEbQ8JP44X-zpPasDRsSPMke6hp8vdILw1UcuVfOWTSUfrdy6FYP3GKZvHZTjYcX28x2ddz4Y1-ID6kDKv4GA13GcuvDNr4n4LQHR6SHVIyCmk-I_w5klSuf88gihKJHzT79Xqri9hd4w3936wVlneMlOCZ_g9yR",
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuD8OKkJjIgFv9UlqjPNX569JTvGZLPSYnKPyH75-xCBxIFhQvL4hnTCNArdBhf0epoV22i8D78p-vLXl1YC85W95WLoxlRxlTPR_Ez_LxbeoW93vBM5-WRjvEekyWOqWdnct8vLZUl2XdLG7RW6nXN6SEdnJEHYySbxx8joVq1ceMdN3gWy5LYMPPk0p6-zAPIS1Qvb5FDu01hcV_AxpNe-pzAjPF0B3aOCcN8mZo0y0KUPXIPxbXu8LOtb6OCzTeeD_Ovb8MACxtdV",
-            "https://lh3.googleusercontent.com/aida-public/AB6AXuAx76g4cVkBU28-Wng_ZCmQHx2JpaPZ5u8RR7qPO22LOg-TRfISxo6iKDWMDdZwiBPf3s0rF9VL7a7HpAk2OToS1pN70AyBUM7zExN7NnC39rmt0KTQazdGZOmGWfahvIT59sClHzmZb20YjIPJ3JQdO7g95O8QkFMUR0mEZlrtQJw-EpsszQDUo3WQ1e4uC2wxFJEddXKzhB-CZif_JAcPvR1n8MjSF8WkQ6vM6-cEgeu_3jkIwPTimcyJab7k3x7dCnlE8Xsnthl7"
+            "https://i.ytimg.com/vi/bRbFqSX2PP0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDPSrlzgVwQQAfF62iVkkMwcaRr0g",
+            "https://i0.wp.com/lukaesenko.com/wp-content/uploads/2024/11/pexels-japy-29020349-copy.jpg?fit=1600%2C1067&ssl=1",
+            "https://cdn.mos.cms.futurecdn.net/VcNfLPoyjzKkB2a9xr5QB5.jpg",
+            "https://www.att.com/scmsassets/global/devices/phones/apple/apple-iphone-16-pro-max/gallery/desert-titanium-1.jpg"
         ],
         description: "iPhone 15 Pro Max. Thiết kế từ titan chuẩn hàng không vũ trụ, bền bỉ và nhẹ hơn bao giờ hết. Chip A17 Pro mang lại hiệu năng đồ họa đột phá. Nút Tác Vụ tùy chỉnh theo ý muốn.",
         fullDescription: `
@@ -389,7 +443,13 @@ export const mockProducts = [
         originalPrice: 38990000,
         discountPercent: 10,
         stock: 30,
-        image: "https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/tile/Apple-iPhone-16-Pro-hero-240909-lp.jpg.landing-big_2x.jpg"
+        image: "https://www.apple.com/newsroom/images/2024/09/apple-debuts-iphone-16-pro-and-iphone-16-pro-max/tile/Apple-iPhone-16-Pro-hero-240909-lp.jpg.landing-big_2x.jpg",
+        gallery: [
+            "https://i.ytimg.com/vi/bRbFqSX2PP0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDPSrlzgVwQQAfF62iVkkMwcaRr0g",
+            "https://i0.wp.com/lukaesenko.com/wp-content/uploads/2024/11/pexels-japy-29020349-copy.jpg?fit=1600%2C1067&ssl=1",
+            "https://cdn.mos.cms.futurecdn.net/VcNfLPoyjzKkB2a9xr5QB5.jpg",
+            "https://www.att.com/scmsassets/global/devices/phones/apple/apple-iphone-16-pro-max/gallery/desert-titanium-1.jpg"
+        ]
     },
     {
         id: 13,
@@ -410,7 +470,13 @@ export const mockProducts = [
         originalPrice: 34990000,
         discountPercent: 11,
         stock: 25,
-        image: "https://images.samsung.com/levant/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-blue-back-mo.jpg?imbypass=true"
+        image: "https://images.samsung.com/levant/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-blue-back-mo.jpg?imbypass=true",
+        gallery: [
+            "https://images.samsung.com/levant/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-yellow-back-mo.jpg?imbypass=true",
+            "https://cdn.mos.cms.futurecdn.net/iF3mgEfjeKWNLW9YxqZeuF.jpeg",
+            "https://img.global.news.samsung.com/uk/wp-content/uploads/2024/09/001-Truly-Pro-How-Galaxy-S24Ultra-Unleashes-Your-Inner-Photographer.jpg",
+            "https://images.samsung.com/levant/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-violet-back-mo.jpg?imbypass=true"
+        ]
     },
     {
         id: 14,
@@ -429,7 +495,13 @@ export const mockProducts = [
         },
         price: 25990000,
         stock: 20,
-        image: "https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/415210-smartphones-google-pixel-9-pro-10041020.png"
+        image: "https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/415210-smartphones-google-pixel-9-pro-10041020.png",
+        gallery: [
+            "https://lh3.googleusercontent.com/E3SXpQuTnr2_r_nufGVPzXUGMJ9RLZy2TSRQi5h8yh8rGN_-1fjw3XLLaKlO6K3-WzrUvBFBx7PLR1P4-cC3nFP_AzWxCu582-8NTVk=rw-e365-nu-w2880-v1",
+            "https://lh3.googleusercontent.com/0KSCWElJQL9wcDa58Lpml9jq2IWY5AD8Ick3XVdtyZ_cu0VxkKWWcr8D7nR98_VPoBQjAUZ1tQCJdok_4qYoSV1hykjeeRb2JU_irg=w1200",
+            "https://www.cnet.com/a/img/resize/ad99814a887ec09d80ab6cbb3915f564329ab597/hub/2024/08/20/2f65435a-2b82-4deb-b26d-56aa74663e09/pixel-9-pro-xl-review-lanxon-43.jpg?auto=webp&fit=crop&height=900&width=1200",
+            "https://www.droid-life.com/2024/07/12/pixel-9-pro-goes-up-against-pixel-9-in-early-hands-on-video/pixel-9-and-pixel-9-pro-1/"
+        ]
     },
     {
         id: 14,
@@ -450,7 +522,13 @@ export const mockProducts = [
         originalPrice: 27990000,
         discountPercent: 11,
         stock: 18,
-        image: "https://gbatemp.net/data/reviews/boxart/full/2460.jpg?1710775344"
+        image: "https://gbatemp.net/data/reviews/boxart/full/2460.jpg?1710775344",
+        gallery: [
+            "https://www.cnet.com/a/img/resize/005920f02fb933dd741737d9fc28dfc28e3624b4/hub/2024/04/04/89d09a95-5483-4846-9495-0ff02091e2ec/xiaomi-14-ultra-promo-lanxon-cnet-review-18.jpg?auto=webp&width=1200",
+            "https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-14-ultra/m/78f9eac27b912d93298bf2a06f8821f4.jpg",
+            "https://i.ytimg.com/vi/mEhRbMCJh08/maxresdefault.jpg",
+            "http://reviewcentralme.com/wp-content/uploads/2024/02/Xiaomi-MWC-2024-1.jpg"
+        ]
     },
     {
         id: 15,
@@ -469,9 +547,15 @@ export const mockProducts = [
         },
         price: 27990000,
         stock: 22,
-        image: "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x8-series-en/find-x8-pro/products/932-720.png"
+        image: "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x8-series-en/find-x8-pro/products/932-720.png",
+        gallery: [
+            "https://www.oppo.com/content/dam/oppo/common/mkt/v2-2/find-x8-series-en/find-x8-pro/products/932-720.png",
+            "https://www.oppo.com/content/dam/oppo/product-asset-library/find/find-x8-series/en/oppo-find-x8-pro/white-apac/assets/images-color-konka-l-1-mo.jpg",
+            "https://www.vopmart.com/media/wysiwyg/OPPO/oppo-find-x8-pro-review-02.jpg",
+            "https://www.dxomark.com/wp-content/uploads/medias/post-179939/Oppo-Find-X8-Pro_featured-image-packshot-review.jpg"
+        ]
     },
-    // Âm thanh (id 16-20)
+    // Audio
     {
         id: 16,
         name: "Tai nghe Apple AirPods Pro 2",
@@ -490,7 +574,13 @@ export const mockProducts = [
         originalPrice: 7490000,
         discountPercent: 13,
         stock: 40,
-        image: "https://media.wired.com/photos/671577232009d044328f83e0/master/w_2560%2Cc_limit/AirPods%2520Pro%25202%2520Abstract%2520Background%2520102024%2520SOURCE%2520Apple.jpg"
+        image: "https://media.wired.com/photos/671577232009d044328f83e0/master/w_2560%2Cc_limit/AirPods%2520Pro%25202%2520Abstract%2520Background%2520102024%2520SOURCE%2520Apple.jpg",
+        gallery: [
+            "https://i.rtings.com/assets/products/s8HlCeNR/apple-airpods-pro-2nd-generation-truly-wireless/design-medium.jpg?format=auto",
+            "https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg.landing-big_2x.jpg",
+            "https://cdn.outsideonline.com/wp-content/uploads/2022/09/AIRPODS_PRO2_h.jpg",
+            "https://i.rtings.com/assets/products/Tt1f03oR/apple-airpods-pro-2nd-generation-truly-wireless/build-quality-small.jpg?format=auto"
+        ]
     },
     {
         id: 17,
@@ -510,7 +600,13 @@ export const mockProducts = [
         originalPrice: 9990000,
         discountPercent: 15,
         stock: 28,
-        image: "https://i.ytimg.com/vi/v6EjmbMgv80/maxresdefault.jpg"
+        image: "https://i.ytimg.com/vi/v6EjmbMgv80/maxresdefault.jpg",
+        gallery: [
+            "https://www.techhive.com/wp-content/uploads/2023/04/Detail-view-of-the-Sony-WH-1000XMg-gesture-pad-2.jpg?quality=50&strip=all",
+            "http://www.moon-audio.com/cdn/shop/files/sony-wh-1000xm5-main-02__79373.1669671666.1280.1280.jpg?v=1719253283",
+            "https://i.rtings.com/assets/products/Nc33W9lA/sony-wh-1000xm5-wireless/design-medium.jpg?format=auto",
+            "https://b2c-contenthub.com/wp-content/uploads/2022/05/Sony-WH-1000XM5-ear-cup-side.jpg?quality=50&strip=all&w=1200"
+        ]
     },
     {
         id: 18,
@@ -529,7 +625,13 @@ export const mockProducts = [
         },
         price: 4490000,
         stock: 35,
-        image: "https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw0f3b5f7b/JBL_Charge5_Hero_Blue-1605x1605px.png?sw=535&sh=535"
+        image: "https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw0f3b5f7b/JBL_Charge5_Hero_Blue-1605x1605px.png?sw=535&sh=535",
+        gallery: [
+            "https://i.rtings.com/assets/products/sVaiMndk/jbl-charge-5/design-medium.jpg?format=auto",
+            "https://www.cnet.com/a/img/resize/87c90c32f89d68929800e1f50ae223d357be73d8/hub/2021/01/07/4b75e972-2142-48b2-94db-3919b14d5f26/jbl-charge-5.png?auto=webp&fit=crop&height=675&width=1200",
+            "https://www.popsci.com/wp-content/uploads/2021/06/14/IMG_0476-scaled.jpg?quality=85&w=768",
+            "https://i.ytimg.com/vi/ytnsieD3enU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCyZk_Znh99kiW5AIgZpbK5qoc2AQ"
+        ]
     },
     {
         id: 19,
@@ -547,7 +649,13 @@ export const mockProducts = [
         },
         price: 9490000,
         stock: 15,
-        image: "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/content_pages/headphones/qc_ultra/assets/images/product_images/QCUH_Black_PDP_hero.png/jcr:content/renditions/cq5dam.web.1920.1920.png"
+        image: "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/content_pages/headphones/qc_ultra/assets/images/product_images/QCUH_Black_PDP_hero.png/jcr:content/renditions/cq5dam.web.1920.1920.png",
+        gallery: [
+            "https://www.cnet.com/a/img/resize/3abd8c492ec5abf4dd80dba42545b827f731e0f9/hub/2023/09/14/49921644-463c-4a06-bc85-dc8b362bba81/bose-quietcomfort-ultra-headphones-1.jpg?auto=webp&fit=crop&height=900&width=1200",
+            "https://www.cnet.com/a/img/resize/c9d8fcca10fcf12be1f26cff5192948c5e033be2/hub/2023/10/05/c0041317-8d33-4e63-a688-211449b763c3/bose-quietcomfort-ultra-earbuds-silver2.jpg?auto=webp&fit=crop&height=362&width=644",
+            "https://www.zdnet.com/a/img/2023/10/30/cdd61de8-2409-43b9-b926-ad65690ab327/qcultrahero.jpg",
+            "https://sm.mashable.com/mashable_sea/review/r/review-bos/review-bose-quietcomfort-ultra-are-the-most-comfortable-head_hy16.jpg"
+        ]
     },
     {
         id: 20,
@@ -567,9 +675,15 @@ export const mockProducts = [
         originalPrice: 6490000,
         discountPercent: 15,
         stock: 32,
-        image: "https://image-us.samsung.com/us/galaxy-buds3-pro/images/galaxy-buds3-pro-crystal-tw-off-mo.jpg?imbypass=true"
+        image: "https://image-us.samsung.com/us/galaxy-buds3-pro/images/galaxy-buds3-pro-crystal-tw-off-mo.jpg?imbypass=true",
+        gallery: [
+            "https://image-us.samsung.com/us/galaxy-buds3-pro/images/galaxy-buds3-pro-new-design-colorchip-silver02-mo.jpg?imbypass=true",
+            "https://images.samsung.com/is/image/samsung/assets/us/galaxy-buds3-pro/images/galaxy-buds3-pro-intuitive-control-tab01-startframe-mo_0710.jpg?imbypass=true",
+            "https://image-us.samsung.com/SamsungUS/home/mobile/audio/headphones/buds3-gallery/SCOMB6Q6-887-SM-R630_001_Front_White_RGB-1600x1200.jpg?$product-details-jpg$",
+            "https://www.androidauthority.com/wp-content/uploads/2024/07/Samsung-Galaxy-Buds-3-Pro-close-up.jpg"
+        ]
     },
-    // Đồng hồ thông minh (id 21-25)
+    // Smartwatch 
     {
         id: 21,
         name: "Đồng hồ Apple Watch Ultra 2",
@@ -586,7 +700,13 @@ export const mockProducts = [
         },
         price: 21990000,
         stock: 20,
-        image: "https://www.apple.com/ecc-shared/apple-watch-ultra-2/images/meta/apple-watch-ultra-2__epn0vw7597qu_og.png"
+        image: "https://www.apple.com/ecc-shared/apple-watch-ultra-2/images/meta/apple-watch-ultra-2__epn0vw7597qu_og.png",
+        gallery: [
+            "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-hero-230912_Full-Bleed-Image.jpg.large.jpg",
+            "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-side-button-Digital-Crown-230912_Full-Bleed-Image.jpg.large.jpg",
+            "https://cdn.cs.1worldsync.com/dc/8a/dc8addd4-fdef-4d3d-aef7-ef0fbc35f440.jpg",
+            "https://i.insider.com/6500c5f81afe8f0019e90db9?width=700"
+        ]
     },
     {
         id: 22,
@@ -604,7 +724,13 @@ export const mockProducts = [
         },
         price: 8490000,
         stock: 28,
-        image: "https://image-us.samsung.com/us/galaxy-watch7/designstudio/SM-L310NZG_ET-SNL31LK.jpg?$product-details-jpg$"
+        image: "https://image-us.samsung.com/us/galaxy-watch7/designstudio/SM-L310NZG_ET-SNL31LK.jpg?$product-details-jpg$",
+        gallery: [
+            "https://i.insider.com/668da36d39de72f47bc9d509?width=800&format=jpeg&auto=webp",
+            "https://i.ytimg.com/vi/8pCLyj-dwFQ/maxresdefault.jpg",
+            "https://i.ytimg.com/vi/B_VSUOdVvsQ/maxresdefault.jpg",
+            "https://i.ytimg.com/vi/4lJK5eKhlns/maxresdefault.jpg"
+        ]
     },
     {
         id: 23,
@@ -622,7 +748,13 @@ export const mockProducts = [
         },
         price: 12490000,
         stock: 18,
-        image: "https://static.garmincdn.com/en_US/prod/664098/010-02885-11.png"
+        image: "https://static.garmincdn.com/en_US/prod/664098/010-02885-11.png",
+        gallery: [
+            "https://garminrumors.com/wp-content/uploads/elementor/thumbs/Venu-3-Series-scaled-r3g2kaiqe016rf7d4ov2hdcib1e6vu3qz46i4ko9io.jpg",
+            "https://cdn.mos.cms.futurecdn.net/SicvCQA8CsHUG3TXoyQdmj.jpeg",
+            "https://i.ytimg.com/vi/TUM2bQvrMVM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCpBve-gD6o2WJmebEYW4L6LOJBXQ",
+            "https://garminrumors.com/wp-content/uploads/2025/01/Venu-3-Elevate-Gen-5-v-4-scaled.jpg"
+        ]
     },
     {
         id: 24,
@@ -642,7 +774,13 @@ export const mockProducts = [
         originalPrice: 8990000,
         discountPercent: 17,
         stock: 25,
-        image: "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5-pro/images/s16/huawei-watch-gt-5-pro-strap.png"
+        image: "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5-pro/images/s16/huawei-watch-gt-5-pro-strap.png",
+        gallery: [
+            "https://www.wareable.com/wp-content/uploads/sites/6/2024/09/Vili_Blue_Special-Angle_02_EN_PNG_5000PX_20240829-1024x576.jpg",
+            "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5-pro/images/kv/huawei-watch-gt-5-pro-kv.jpg",
+            "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5/img/s16/huawei-watch-gt-5-strap.png",
+            "https://www.huaweicentral.com/wp-content/uploads/2024/09/Watch-GT-5-variants.jpg"
+        ]
     },
     {
         id: 25,
@@ -660,9 +798,15 @@ export const mockProducts = [
         },
         price: 4490000,
         stock: 30,
-        image: "https://xiaomiplanet.sk/wp-content/uploads/2023/10/xiaomi-watch-s3-oficialne-foto.jpg"
+        image: "https://xiaomiplanet.sk/wp-content/uploads/2023/10/xiaomi-watch-s3-oficialne-foto.jpg",
+        gallery: [
+            "https://www.vopmart.com/media/magefan_blog/xiaomi-watch-s3-review-01.jpg",
+            "https://www.gadgetmatch.com/wp-content/uploads/2024/03/xiaomi-watch-s3-barcelona-plus-20240306-10.jpg",
+            "https://www.vopmart.com/media/wysiwyg/Xiaomi/Watch/xiaomi-watch-s3-review-06.jpg",
+            "https://www.cnet.com/a/img/resize/aaf2f3a7226a790b62c2cc1f3dd601843be4a3ed/hub/2024/02/25/d232f49e-cee5-4df8-a502-152475465c5d/xiaomi-watches-mwc-2024.jpg?auto=webp&fit=crop&height=675&width=1200"
+        ]
     },
-    // Nhà thông minh (id 26-30)
+    // Smart home
     {
         id: 26,
         name: "Camera Google Nest Cam Indoor",
@@ -679,7 +823,13 @@ export const mockProducts = [
         },
         price: 2990000,
         stock: 35,
-        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGEhjM57k655I5pX7EdiHVxIwQq373lXsV9M_Wzqw9H1IlfCeTVf1v7ZRnNJhi3ENtCaTjcWYcPVZT9X__Ikt-9WgWPwq0Z06FJONs0L-qAEjDl3Jr9E5qAw1zG25PIcRpGeLbPxZzkbg/s512/Image+1+_+blog.jpg"
+        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGEhjM57k655I5pX7EdiHVxIwQq373lXsV9M_Wzqw9H1IlfCeTVf1v7ZRnNJhi3ENtCaTjcWYcPVZT9X__Ikt-9WgWPwq0Z06FJONs0L-qAEjDl3Jr9E5qAw1zG25PIcRpGeLbPxZzkbg/s512/Image+1+_+blog.jpg",
+        gallery: [
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/b8ec6350-31c9-4440-9995-0229766e70b8.__CR0,0,600,450_PT0_SX600_V1___.jpg",
+            "https://www.cnet.com/a/img/resize/972cc85011b8d862f25b21c05f61c43731a68ac0/hub/2021/10/06/2ea83d98-3971-4f5e-b968-93d7e696c2af/20211005-134622.jpg?auto=webp&fit=crop&height=362&width=644",
+            "https://reviewed-com-res.cloudinary.com/image/fetch/s--iTvHEQL8--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1558020250785/Nest-Cam-vs-Nest-Cam-IQ.jpg",
+            "https://i.ytimg.com/vi/owo-l45k9z8/maxresdefault.jpg"
+        ]
     },
     {
         id: 27,
@@ -699,7 +849,13 @@ export const mockProducts = [
         originalPrice: 1790000,
         discountPercent: 17,
         stock: 50,
-        image: "https://m.media-amazon.com/images/I/41ve63H9SjL._AC_UF894,1000_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/41ve63H9SjL._AC_UF894,1000_QL80_.jpg",
+        gallery: [
+            "https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMTE0NTI4Mi9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTc2NTM4ODI4N30.N4Gs_o5L1i2isOb5-E9epXMaJN2bVqRxtCyP2GNBO0A/img.jpg?width=1200&height=800&quality=50&coordinates=0%2C54%2C0%2C-1",
+            "https://m.media-amazon.com/images/I/617BRWxzN8L._AC_UF894,1000_QL80_.jpg",
+            "https://b2c-contenthub.com/wp-content/uploads/2024/01/philips-hue-secure-camera-starter-kit.jpg?quality=50&strip=all&w=1200",
+            "https://www.assets.signify.com/is/image/Signify/046677592530-929004235501-E26-UI-ATF-APP?wid=1280&hei=960&qlt=82"
+        ]
     },
     {
         id: 28,
@@ -716,7 +872,13 @@ export const mockProducts = [
         },
         price: 1490000,
         stock: 45,
-        image: "https://m.media-amazon.com/images/I/51uw7oiDdyL._AC_UF350,350_QL80_.jpg"
+        image: "https://m.media-amazon.com/images/I/51uw7oiDdyL._AC_UF350,350_QL80_.jpg",
+        gallery: [
+            "https://www.androidauthority.com/wp-content/uploads/2022/11/An-angle-on-the-5th-gen-Echo-Dot-with-Clock.jpg",
+            "http://reviewcentralme.com/wp-content/uploads/2022/12/Amazon-Echo-Dot-5th-generation-review-1.jpg",
+            "https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/407823-smart-speakers-amazon-echo-dot-5th-gen-w-clock-10033746.png",
+            "https://www.cnet.com/a/img/resize/19412a37446ca922d1f41e579727fc182ddadab2/hub/2022/10/20/100951b8-b753-40c9-bd7a-aaee5a6fdcee/img-2839.jpg?auto=webp&width=1200"
+        ]
     },
     {
         id: 29,
@@ -733,7 +895,13 @@ export const mockProducts = [
         },
         price: 690000,
         stock: 60,
-        image: "https://i.pcmag.com/imagery/reviews/02bedfMfwsBrVRtalw4whcm-1.fit_lim.size_1200x630.v1657119959.png"
+        image: "https://i.pcmag.com/imagery/reviews/02bedfMfwsBrVRtalw4whcm-1.fit_lim.size_1200x630.v1657119959.png",
+        gallery: [
+            "https://images.crutchfieldonline.com/ImageHandler/trim/750/457/products/2019/35/624/g624HS107-F.jpg",
+            "https://homekitnews.com/wp-content/uploads/2023/03/kasa-smart-plug-matter-nw-fi.jpg",
+            "https://images.crutchfieldonline.com/ImageHandler/trim/750/457/products/2019/35/624/g624HS107-M.jpg",
+            "https://media.cnn.com/api/v1/images/stellar/prod/kasa-smart-plug.jpg?c=16x9&q=h_833,w_1480,c_fill"
+        ]
     },
     {
         id: 30,
@@ -751,11 +919,16 @@ export const mockProducts = [
         },
         price: 3490000,
         stock: 22,
-        image: "https://images.squarespace-cdn.com/content/v1/587923d39f745695a9b5207b/1496676997732-ICWYJD2296ADUD4MULBG/SimplyHome+RING+Doorbell+Product+Photo"
+        image: "https://images.squarespace-cdn.com/content/v1/587923d39f745695a9b5207b/1496676997732-ICWYJD2296ADUD4MULBG/SimplyHome+RING+Doorbell+Product+Photo",
+        gallery: [
+            "https://www.techhive.com/wp-content/uploads/2023/04/ring-video-doorbell-4-angle-2-100895330-orig-1.jpg?quality=50&strip=all&w=1024",
+            "https://images.ctfassets.net/a3peezndovsu/4bth2uz7cA1JyL2LqSd9oU/37f2d4d3da87b6ac955ffb38cc2bf755/ring_video_doorbell_5050_split_plus_desktop_2x.jpg",
+            "https://www.digitaltrends.com/tachyon/2021/03/ring_video_doorbell_pro_2_angle2-scaled.jpg?fit=2560%2C1920",
+            "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:125,cw:1250,ch:938,q:80,w:1250/w9YKLCBUQF9UUnYCe7HoWH.jpeg"
+        ]
     }
 ].map(product => ({
     ...product,
-    // Add default values for products without extended data
     gallery: product.gallery || [product.image],
     description: product.description || `${product.name} - Sản phẩm chính hãng ${product.brand}, chất lượng cao với giá cả hợp lý. ${product.badges?.includes('hot') ? 'Sản phẩm bán chạy nhất!' : ''}`,
     fullDescription: product.fullDescription || `
@@ -767,7 +940,6 @@ export const mockProducts = [
         </ul>
     `,
     shortSpecs: product.shortSpecs || Object.entries(product.specs).slice(0, 3).map(([key, value]) => {
-        // Map thuộc tính specs với Material Icons phù hợp
         const iconMap = {
             // Laptop/PC
             'cpu': 'memory',
