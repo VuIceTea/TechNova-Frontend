@@ -89,7 +89,7 @@ export default function PromoSection({ promo }) {
             </style>
             <section className="w-full mx-auto max-w-350 px-2 md:px-4 mb-16">
                 <div
-                    className="relative rounded-2xl p-6 md:p-12 overflow-hidden min-h-70 md:min-h-80"
+                    className="relative rounded-2xl p-6 md:p-12 overflow-hidden min-h-70 md:min-h-80 shadow-lg"
                     style={{
                         background: `linear-gradient(135deg, ${promo.background.from} 0%, ${promo.background.to} 100%)`
                     }}

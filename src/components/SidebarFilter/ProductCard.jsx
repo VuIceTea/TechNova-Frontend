@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
@@ -10,9 +11,28 @@ import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const { addToCart } = useCart();
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('vi-VN').format(price) + '₫';
+    };
+
+    const handleAddToCart = (e) => {
+        e.preventDefault(); // Prevent Link navigation
+        e.stopPropagation(); // Stop event bubbling
+
+        // Initialize default variants
+        const defaultVariant = product.variants && product.variants.length > 0 ? {
+            selectedColor: product.variants[0].colors?.[0] || null,
+            selectedStorage: product.variants[0].storages?.[0] || null,
+            selectedRam: product.variants[0].ram?.[0] || null,
+            selectedScreenSize: product.variants[0].screenSize?.[0] || null,
+        } : null;
+
+        addToCart(product, defaultVariant);
+
+        // Optional: Show a brief notification
+        alert(`Đã thêm ${product.name} vào giỏ hàng!`);
     };
 
     const renderStars = (rating) => {
@@ -42,6 +62,9 @@ const ProductCard = ({ product }) => {
             >
                 {product.badges && product.badges.length > 0 && (
                     <div className={styles.badges}>
+                        {product.isFlashSale && (
+                            <span className={styles.badgeFlashSale}>⚡ FLASH SALE</span>
+                        )}
                         {product.badges.includes('new') && (
                             <span className={styles.badgeNew}>MỚI</span>
                         )}
@@ -129,7 +152,11 @@ const ProductCard = ({ product }) => {
                                 </span>
                             )}
                         </div>
-                        <button className={styles.addToCart}>
+                        <button
+                            className={styles.addToCart}
+                            onClick={handleAddToCart}
+                            title="Thêm vào giỏ hàng"
+                        >
                             <AddShoppingCartIcon className={styles.cartIcon} />
                         </button>
                     </div>

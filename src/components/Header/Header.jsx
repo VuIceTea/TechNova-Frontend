@@ -3,16 +3,24 @@ import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { useTheme } from '../../context/ThemeContext';
+import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
 
 const Header = () => {
     const [keyword, setKeyword] = useState("");
+    const { theme, toggleTheme } = useTheme();
+    const { getCartItemsCount } = useCart();
+    const { isAuthenticated } = useAuth();
 
     const handleSearchChange = (event) => {
         setKeyword(event.target.value);
     };
     return (
-        <header className="w-full bg-[#111318]/90 fixed top-0 left-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#282e39] backdrop-blur-md px-4 py-3 lg:px-10 ">
-            <div className="gap-4 flex items-center cursor-pointer">
+        <header className="w-full bg-white/95 dark:bg-[#111318]/90 fixed top-0 left-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-[#282e39] backdrop-blur-md px-4 py-3 lg:px-10 transition-colors duration-300">
+            <Link to="/" className="gap-4 flex items-center cursor-pointer hover:opacity-80 transition-opacity">
                 <svg
                     viewBox="0 0 48 48"
                     fill="none"
@@ -24,28 +32,28 @@ const Header = () => {
                         fill="currentColor"
                     />
                 </svg>
-                <button className="cursor-pointer hidden lg:block text-white text-xl font-semibold leading-tight border-none">
+                <span className="hidden lg:block text-gray-900 dark:text-white text-xl font-semibold leading-tight transition-colors duration-300">
                     TechNova
-                </button>
+                </span>
+            </Link>
 
-                <nav className="hidden lg:flex items-center gap-9 ml-9">
-                    <Link to="/" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Trang chủ</Link>
-                    <Link to="/category" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Sản phẩm</Link>
-                    <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Khuyến mãi</a>
-                    <a href="#" className="text-[#9da6b9] text-sm font-medium leading-normal hover:text-white transition-colors">Hỗ trợ</a>
-                </nav>
-            </div>
+            <nav className="hidden lg:flex items-center gap-9 ml-9">
+                <Link to="/" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Trang chủ</Link>
+                <Link to="/category" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Sản phẩm</Link>
+                <Link to="/promotions" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Khuyến mãi</Link>
+                <Link to="/support" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Hỗ trợ</Link>
+            </nav>
 
             <div className="justify-end flex items-center">
                 <label className="hidden md:flex min-w-40 max-w-64 h-10 mr-8">
                     <div
-                        className="flex w-full h-full rounded-lg bg-border-dark bg-[#282e39]"
+                        className="flex w-full h-full rounded-lg bg-gray-100 dark:bg-[#282e39] transition-colors duration-300"
                     >
-                        <div className="flex items-center pl-4 text-[#9da6b9]">
+                        <div className="flex items-center pl-4 text-gray-500 dark:text-[#9da6b9]">
                             <SearchIcon fontSize="small" />
                         </div>
                         <input
-                            className="flex-1 bg-transparent px-4 pl-2 text-sm text-white placeholder:text-[#9da6b9] focus:outline-none border-none focus:ring-0"
+                            className="flex-1 bg-transparent px-4 pl-2 text-sm text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-[#9da6b9] focus:outline-none border-none focus:ring-0"
                             placeholder="Tìm kiếm sản phẩm..."
                             onChange={handleSearchChange}
                             value={keyword}
@@ -54,13 +62,35 @@ const Header = () => {
                     </div>
                 </label>
 
-                <div className=" rounded-lg justify-center flex items-center gap-3">
-                    <div className="h-10 w-10 bg-[#282e39] rounded-lg flex justify-center items-center">
-                        <ShoppingCartIcon className="text-white cursor-pointer" fontSize="small" />
-                    </div>
-                    <div className="h-10 w-10 bg-[#282e39] rounded-lg flex justify-center items-center">
-                        <PersonIcon className="text-white cursor-pointer" fontSize="small" />
-                    </div>
+                <div className="rounded-lg justify-center flex items-center gap-3">
+                    <button
+                        onClick={toggleTheme}
+                        className="h-10 w-10 bg-gray-100 dark:bg-[#282e39] rounded-lg flex justify-center items-center hover:bg-gray-200 dark:hover:bg-[#3a4250] transition-all duration-300 group"
+                        aria-label="Chuyển đổi theme"
+                    >
+                        {theme === 'light' ? (
+                            <DarkModeIcon className="text-gray-700 cursor-pointer group-hover:rotate-180 transition-transform duration-500" fontSize="small" />
+                        ) : (
+                            <LightModeIcon className="text-yellow-400 cursor-pointer group-hover:rotate-180 transition-transform duration-500" fontSize="small" />
+                        )}
+                    </button>
+                    <Link
+                        to="/cart"
+                        className="relative h-10 w-10 bg-gray-100 dark:bg-[#282e39] rounded-lg flex justify-center items-center hover:bg-gray-200 dark:hover:bg-[#3a4250] transition-all duration-300"
+                    >
+                        <ShoppingCartIcon className="text-gray-700 dark:text-white cursor-pointer" fontSize="small" />
+                        {getCartItemsCount() > 0 && (
+                            <span className="absolute top-2 right-2 flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-bold text-white bg-[#135bec] rounded-full">
+                                {getCartItemsCount()}
+                            </span>
+                        )}
+                    </Link>
+                    <Link
+                        to={isAuthenticated ? "/profile" : "/login"}
+                        className="h-10 w-10 bg-gray-100 dark:bg-[#282e39] rounded-full flex justify-center items-center hover:bg-gray-200 dark:hover:bg-[#3a4250] transition-all duration-300"
+                    >
+                        <PersonIcon className="text-gray-700 dark:text-white" fontSize="small" />
+                    </Link>
                 </div>
 
             </div>

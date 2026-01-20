@@ -29,7 +29,7 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div className="bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
             {/* Banner Section */}
             <BannerCarousel banners={banners} />
 
@@ -50,7 +50,7 @@ const Home = () => {
 
             {/* Testimonials Section */}
             <TestimonialsSection />
-        </>
+        </div>
     );
 }
 

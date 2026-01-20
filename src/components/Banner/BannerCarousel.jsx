@@ -1,6 +1,6 @@
 export default function BannerCarousel({ banners }) {
     return (
-        <section className="w-full max-w-350 mx-auto px-2 md:px-4 mb-16">
+        <section className="w-full max-w-350 mx-auto px-2 md:px-4 pt-6 mb-16">
             {banners.map((banner) => (
                 <div
                     key={banner.id}

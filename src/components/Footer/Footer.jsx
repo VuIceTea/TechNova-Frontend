@@ -12,8 +12,8 @@ const Footer = () => {
     };
 
     return (
-        <footer className="w-full bg-[#111318]/90 items-center justify-center whitespace-nowrap border-t border-solid border-[#282e39] backdrop-blur-md pt-16 pb-8 px-10 text-white text-sm">
-            <div className="text-left grid grid-cols-4 gap-20 border-b border-solid border-[#282e39] pb-8">
+        <footer className="w-full bg-gray-50 dark:bg-[#111318]/90 items-center justify-center whitespace-nowrap border-t border-solid border-gray-200 dark:border-[#282e39] backdrop-blur-md pt-16 pb-8 px-10 text-gray-900 dark:text-white text-sm transition-colors duration-300">
+            <div className="text-left grid grid-cols-4 gap-20 border-b border-solid border-gray-200 dark:border-[#282e39] pb-8">
                 <div className="leading-relaxed whitespace-break-spaces">
                     <div className="flex gap-2 pb-4">
                         <svg
@@ -27,54 +27,54 @@ const Footer = () => {
                                 fill="currentColor"
                             />
                         </svg>
-                        <button className="cursor-pointer hidden lg:block text-white text-xl font-semibold leading-tight border-none">
+                        <button className="cursor-pointer hidden lg:block text-gray-900 dark:text-white text-xl font-semibold leading-tight border-none">
                             TechNova
                         </button>
                     </div>
-                    <p className="text-[#9da6b9] text-sm">
+                    <p className="text-gray-600 dark:text-[#9da6b9] text-sm">
                         TechNova là điểm đến hàng đầu cho những người yêu công nghệ. Chúng tôi cung cấp các sản phẩm chính hãng, chất lượng cao với dịch vụ khách hàng tận tâm.
                     </p>
 
                     <div className="flex gap-4 mt-2">
-                        <PublicIcon className="text-[#9da6b9] cursor-pointer" />
-                        <VideocamIcon className="text-[#9da6b9] cursor-pointer" />
-                        <PhotoCameraIcon className="text-[#9da6b9] cursor-pointer" />
+                        <PublicIcon className="text-gray-500 dark:text-[#9da6b9] cursor-pointer hover:text-[#135bec] transition-colors" />
+                        <VideocamIcon className="text-gray-500 dark:text-[#9da6b9] cursor-pointer hover:text-[#135bec] transition-colors" />
+                        <PhotoCameraIcon className="text-gray-500 dark:text-[#9da6b9] cursor-pointer hover:text-[#135bec] transition-colors" />
                     </div>
                 </div>
 
                 <div className="">
-                    <h4 className="text-white font-bold mb-6 text-base">Mua sắm</h4>
+                    <h4 className="text-gray-900 dark:text-white font-bold mb-6 text-base">Mua sắm</h4>
                     <ul className="flex flex-col gap-3">
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Laptop Gaming</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Điện thoại thông minh</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Phụ kiện</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Khuyến mãi hot</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Laptop Gaming</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Điện thoại thông minh</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Phụ kiện</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Khuyến mãi hot</a></li>
                     </ul>
                 </div>
 
                 <div className="">
-                    <h4 className="text-white font-bold mb-6 text-base">Hỗ trợ khách hàng</h4>
+                    <h4 className="text-gray-900 dark:text-white font-bold mb-6 text-base">Hỗ trợ khách hàng</h4>
                     <ul className="flex flex-col gap-3">
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Trung tâm trợ giúp</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Chính sách bảo hành</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Trạng thái đơn hàng</a></li>
-                        <li><a href="#" className="text-[#9da6b9] hover:text-white text-sm transition-colors">Liên hệ</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Trung tâm trợ giúp</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Chính sách bảo hành</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Trạng thái đơn hàng</a></li>
+                        <li><a href="#" className="text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white text-sm transition-colors">Liên hệ</a></li>
                     </ul>
                 </div>
 
                 <div className="leading-relaxed whitespace-break-spaces">
-                    <h4 className="text-white font-bold mb-6 text-base">Đăng ký nhận tin</h4>
-                    <p className="text-[#9da6b9] text-sm transition-colors">Nhận thông tin mới nhất về sản phẩm và khuyến mãi</p>
+                    <h4 className="text-gray-900 dark:text-white font-bold mb-6 text-base">Đăng ký nhận tin</h4>
+                    <p className="text-gray-600 dark:text-[#9da6b9] text-sm transition-colors">Nhận thông tin mới nhất về sản phẩm và khuyến mãi</p>
                     <div className="hidden lg:flex gap-3 mt-3">
                         <label className="hidden md:flex min-w-40 max-w-64 h-11">
                             <div
-                                className="flex w-full h-full rounded-lg bg-[#282e39]"
+                                className="flex w-full h-full rounded-lg bg-gray-100 dark:bg-[#282e39]"
                             >
                                 <input
                                     className="
-                                    flex-1 bg-transparent px-4 pl-5 text-sm text-white
-                                    placeholder:text-[#9da6b9]
-                                    border border-[#282e39] rounded-lg
+                                    flex-1 bg-transparent px-4 pl-5 text-sm text-gray-900 dark:text-white
+                                    placeholder:text-gray-500 dark:placeholder:text-[#9da6b9]
+                                    border border-gray-300 dark:border-[#282e39] rounded-lg
                                     focus:outline-none focus:border-[#135bec] focus:ring-1 focus:ring-[#135bec]
                                 "
                                     placeholder="Email của bạn"
@@ -86,17 +86,17 @@ const Footer = () => {
                             </div>
                         </label>
 
-                        <button className="h-11 flex items-center justify-center hover:bg-blue-500 text-white rounded-lg px-4 transition-colors bg-blue-500 cursor-pointer">
+                        <button className="h-11 flex items-center justify-center hover:bg-blue-600 text-white rounded-lg px-4 transition-colors bg-[#135bec] cursor-pointer">
                             <SendIcon fontSize="small" />
                         </button>
                     </div>
                 </div>
             </div>
             <div className="flex flex-1 justify-between py-8">
-                <p className="text-sm text-[#9da6b9]">© 2025 TechNova. All rights reserved.</p>
+                <p className="text-sm text-gray-500 dark:text-[#9da6b9]">© 2025 TechNova. All rights reserved.</p>
                 <div className="flex gap-6">
-                    <a href="#" className="text-sm text-[#9da6b9] hover:text-white">Điều khoản bảo mật</a>
-                    <a href="#" className="text-sm text-[#9da6b9] hover:text-white">Điều khoản sử dụng</a>
+                    <a href="#" className="text-sm text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white transition-colors">Điều khoản bảo mật</a>
+                    <a href="#" className="text-sm text-gray-600 dark:text-[#9da6b9] hover:text-[#135bec] dark:hover:text-white transition-colors">Điều khoản sử dụng</a>
                 </div>
             </div>
         </footer>

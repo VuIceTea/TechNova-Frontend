@@ -23,6 +23,15 @@ const CategoryPage = () => {
 
     const productsPerPage = 9;
 
+    // Map category names to slugs
+    const categoryNameToSlug = {
+        'Máy tính': ['laptop-gaming', 'laptop-van-phong', 'macbook', 'laptop-do-hoa'],
+        'Điện thoại': ['smartphone'],
+        'Âm thanh': ['audio'],
+        'Đồng hồ': ['smartwatch'],
+        'Nhà thông minh': ['smart-home']
+    };
+
     // Update filters when URL search params change
     useEffect(() => {
         const categoryFromUrl = searchParams.get('category');
@@ -32,9 +41,19 @@ const CategoryPage = () => {
     }, [searchParams]);
 
     useEffect(() => {
-        let products = filters.category === 'all'
-            ? [...mockProducts]
-            : mockProducts.filter(p => p.category === filters.category);
+        let products = [...mockProducts];
+
+        // Filter by category
+        if (filters.category && filters.category !== 'all') {
+            const categorySlug = categoryNameToSlug[filters.category];
+            if (categorySlug) {
+                // If category name matches, filter by slug array
+                products = products.filter(p => categorySlug.includes(p.category));
+            } else {
+                // If it's already a slug, use direct comparison
+                products = products.filter(p => p.category === filters.category);
+            }
+        }
 
         // Filter by brands
         if (filters.brands.length > 0) {

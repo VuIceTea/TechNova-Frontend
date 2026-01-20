@@ -22,13 +22,13 @@ export default function FeatureSection({ features }) {
                     return (
                         <div
                             key={feature.id}
-                            className="flex flex-col items-center justify-center gap-4 py-8 px-12 border border-solid border-[#282e39] rounded-lg bg-[#1c1f27]/50 backdrop-blur-sm"
+                            className="flex flex-col items-center justify-center gap-4 py-8 px-12 border border-solid border-gray-200 dark:border-[#282e39] rounded-lg bg-white dark:bg-[#1c1f27]/50 backdrop-blur-sm hover:shadow-lg dark:hover:shadow-[#135bec]/5 transition-all duration-300"
                         >
-                            <div className="w-14 h-14 rounded-full bg-[#135bec]/10 flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-full bg-[#135bec]/10 dark:bg-[#135bec]/10 flex items-center justify-center">
                                 <Icon className="text-[#135bec] w-7 h-7" />
                             </div>
-                            <h3 className="font-bold text-lg text-white">{feature.title}</h3>
-                            <p className="text-[#9da6b9] text-sm text-center">{feature.description}</p>
+                            <h3 className="font-bold text-lg text-gray-900 dark:text-white">{feature.title}</h3>
+                            <p className="text-gray-600 dark:text-[#9da6b9] text-sm text-center">{feature.description}</p>
                         </div>
                     );
                 })}
