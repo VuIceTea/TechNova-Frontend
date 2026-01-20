@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { mockProducts } from '../data/mockProducts';
+import { useCart } from '../context/CartContext';
 import StarIcon from '@mui/icons-material/Star';
 import StarHalfIcon from '@mui/icons-material/StarHalf';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
@@ -14,6 +15,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 const ProductDetail = () => {
     const { slug } = useParams();
     const navigate = useNavigate();
+    const { addToCart } = useCart();
     const scrollContainerRef = useRef(null);
 
     const [product, setProduct] = useState(null);
@@ -28,7 +30,18 @@ const ProductDetail = () => {
         const foundProduct = mockProducts.find(p => p.slug === slug);
         if (foundProduct) {
             setProduct(foundProduct);
-            setSelectedVariant(foundProduct.variants?.[0] || null);
+            
+            if (foundProduct.variants && foundProduct.variants.length > 0) {
+                const defaultVariant = {
+                    selectedColor: foundProduct.variants[0].colors?.[0] || null,
+                    selectedStorage: foundProduct.variants[0].storages?.[0] || null,
+                    selectedRam: foundProduct.variants[0].ram?.[0] || null,
+                    selectedScreenSize: foundProduct.variants[0].screenSize?.[0] || null,
+                };
+                setSelectedVariant(defaultVariant);
+            } else {
+                setSelectedVariant(null);
+            }
         } else {
             navigate('/');
         }
@@ -79,8 +92,8 @@ const ProductDetail = () => {
     };
 
     const handleAddToCart = () => {
-        console.log('Add to cart:', { product, quantity, variant: selectedVariant });
-        // TODO: Implement cart functionality
+        addToCart(product, selectedVariant);
+        alert(`Đã thêm ${product.name} vào giỏ hàng!`);
     };
 
     const getCategoryName = () => {
@@ -115,6 +128,65 @@ const ProductDetail = () => {
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('vi-VN').format(price) + '₫';
+    };
+
+    // Get icon based on spec label and category
+    const getSpecIcon = (label, category) => {
+        const iconMap = {
+            // Laptop specs
+            'cpu': 'memory',
+            'ram': 'memory',
+            'ổ cứng': 'storage',
+            'card đồ họa': 'videogame_asset',
+            'màn hình': 'monitor',
+            'bàn phím': 'keyboard',
+            'kết nối': 'wifi',
+            'cổng kết nối': 'usb',
+            'pin': 'battery_charging_full',
+            'trọng lượng': 'scale',
+            'hệ điều hành': 'computer',
+            
+            // Smartphone specs
+            'kích thước màn hình': 'smartphone',
+            'công nghệ màn hình': 'display_settings',
+            'camera sau': 'photo_camera',
+            'camera trước': 'camera_front',
+            'chipset': 'memory',
+            'chip xử lý': 'memory',
+            
+            // Audio specs
+            'kết nối không dây': 'bluetooth',
+            'thời lượng pin': 'battery_charging_full',
+            'driver': 'speaker',
+            'tần số': 'graphic_eq',
+            'công nghệ âm thanh': 'volume_up',
+            
+            // Smartwatch specs
+            'kích thước mặt': 'watch',
+            'vật liệu': 'category',
+            'chống nước': 'water_drop',
+            'cảm biến': 'sensors',
+            'gps': 'location_on',
+            
+            // Default
+            'default': 'info'
+        };
+
+        const lowerLabel = label.toLowerCase();
+        return iconMap[lowerLabel] || iconMap['default'];
+    };
+
+    // Get category display name
+    const getCategoryDisplayName = (category) => {
+        const categoryNames = {
+            'laptop-gaming': 'Laptop Gaming',
+            'macbook': 'MacBook',
+            'smartphone': 'Điện thoại thông minh',
+            'audio': 'Tai nghe & Loa',
+            'smartwatch': 'Đồng hồ thông minh',
+            'smart-home': 'Thiết bị nhà thông minh'
+        };
+        return categoryNames[category] || 'Sản phẩm';
     };
 
     const relatedProducts = mockProducts
@@ -227,49 +299,132 @@ const ProductDetail = () => {
                             {product.description}
                         </p>
 
-                        {/* Variants */}
+                        {/* Variants - Dynamic based on product */}
                         {product.variants && product.variants.length > 0 && (
-                            <div className="space-y-4">
-                                {product.variants[0].colors && (
+                            <div className="space-y-5">
+                                {/* Colors */}
+                                {product.variants[0].colors && product.variants[0].colors.length > 0 && (
                                     <div>
-                                        <span className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
-                                            Màu sắc: <span className="text-gray-500 font-normal">
-                                                {selectedVariant?.colors?.[0]?.name || 'Chọn màu'}
+                                        <label className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
+                                            Màu sắc: <span className="text-[#135bec] font-medium">
+                                                {selectedVariant?.selectedColor?.name || product.variants[0].colors[0].name}
                                             </span>
-                                        </span>
-                                        <div className="flex gap-3">
-                                            {product.variants[0].colors?.map((color, idx) => (
+                                        </label>
+                                        <div className="flex flex-wrap gap-3">
+                                            {product.variants[0].colors.map((color, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ ...selectedVariant, selectedColor: color })}
-                                                    className={`w-10 h-10 rounded-full ${selectedVariant?.selectedColor?.code === color.code
-                                                        ? 'ring-2 ring-offset-2 ring-[#135bec] ring-offset-[#f6f6f8] dark:ring-offset-[#101622]'
-                                                        : 'hover:ring-2 ring-offset-2 ring-gray-400 dark:ring-gray-600 ring-offset-[#f6f6f8] dark:ring-offset-[#101622]'
-                                                        } transition-all`}
+                                                    onClick={() => setSelectedVariant({ 
+                                                        ...selectedVariant, 
+                                                        selectedColor: color 
+                                                    })}
+                                                    className={`relative w-12 h-12 rounded-full border-2 transition-all ${
+                                                        (selectedVariant?.selectedColor?.code === color.code) || 
+                                                        (!selectedVariant?.selectedColor && idx === 0)
+                                                            ? 'border-[#135bec] scale-110'
+                                                            : 'border-gray-300 dark:border-gray-600 hover:border-[#135bec] hover:scale-105'
+                                                    }`}
                                                     style={{ backgroundColor: color.code }}
                                                     title={color.name}
-                                                />
+                                                >
+                                                    {((selectedVariant?.selectedColor?.code === color.code) || 
+                                                      (!selectedVariant?.selectedColor && idx === 0)) && (
+                                                        <span className="absolute inset-0 flex items-center justify-center">
+                                                            <span className="material-symbols-outlined text-white text-[20px] drop-shadow-lg">
+                                                                check
+                                                            </span>
+                                                        </span>
+                                                    )}
+                                                </button>
                                             ))}
                                         </div>
                                     </div>
                                 )}
 
-                                {product.variants[0].storages && (
+                                {/* Storage */}
+                                {product.variants[0].storages && product.variants[0].storages.length > 0 && (
                                     <div>
-                                        <span className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
-                                            Dung lượng:
-                                        </span>
-                                        <div className="grid grid-cols-4 gap-3">
-                                            {product.variants[0].storages?.map((storage, idx) => (
+                                        <label className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
+                                            Dung lượng: <span className="text-[#135bec] font-medium">
+                                                {selectedVariant?.selectedStorage || product.variants[0].storages[0]}
+                                            </span>
+                                        </label>
+                                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                                            {product.variants[0].storages.map((storage, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ ...selectedVariant, selectedStorage: storage })}
-                                                    className={`py-3 px-2 rounded-lg border ${selectedVariant?.selectedStorage === storage
-                                                        ? 'border-[#135bec] bg-[#135bec]/10 text-[#135bec] font-bold'
-                                                        : 'border-gray-300 dark:border-gray-700 hover:border-[#135bec] bg-white dark:bg-[#1a2230]'
-                                                        } text-sm font-medium text-center transition-all`}
+                                                    onClick={() => setSelectedVariant({ 
+                                                        ...selectedVariant, 
+                                                        selectedStorage: storage 
+                                                    })}
+                                                    className={`py-3 px-2 rounded-lg border-2 text-sm font-semibold text-center transition-all ${
+                                                        (selectedVariant?.selectedStorage === storage) || 
+                                                        (!selectedVariant?.selectedStorage && idx === 0)
+                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                    }`}
                                                 >
                                                     {storage}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* RAM */}
+                                {product.variants[0].ram && product.variants[0].ram.length > 1 && (
+                                    <div>
+                                        <label className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
+                                            RAM: <span className="text-[#135bec] font-medium">
+                                                {selectedVariant?.selectedRam || product.variants[0].ram[0]}
+                                            </span>
+                                        </label>
+                                        <div className="flex flex-wrap gap-3">
+                                            {product.variants[0].ram.map((ram, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={() => setSelectedVariant({ 
+                                                        ...selectedVariant, 
+                                                        selectedRam: ram 
+                                                    })}
+                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${
+                                                        (selectedVariant?.selectedRam === ram) || 
+                                                        (!selectedVariant?.selectedRam && idx === 0)
+                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                    }`}
+                                                >
+                                                    {ram}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Screen Size */}
+                                {product.variants[0].screenSize && product.variants[0].screenSize.length > 1 && (
+                                    <div>
+                                        <label className="text-sm font-bold text-gray-900 dark:text-white block mb-3">
+                                            Kích thước màn hình: <span className="text-[#135bec] font-medium">
+                                                {selectedVariant?.selectedScreenSize || product.variants[0].screenSize[0]}
+                                            </span>
+                                        </label>
+                                        <div className="flex flex-wrap gap-3">
+                                            {product.variants[0].screenSize.map((size, idx) => (
+                                                <button
+                                                    key={idx}
+                                                    onClick={() => setSelectedVariant({ 
+                                                        ...selectedVariant, 
+                                                        selectedScreenSize: size 
+                                                    })}
+                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${
+                                                        (selectedVariant?.selectedScreenSize === size) || 
+                                                        (!selectedVariant?.selectedScreenSize && idx === 0)
+                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                    }`}
+                                                >
+                                                    {size}
                                                 </button>
                                             ))}
                                         </div>
@@ -345,15 +500,19 @@ const ProductDetail = () => {
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-[#282e39] pb-2">
                                 Thông số kỹ thuật
                             </h3>
-                            <div className="border border-gray-200 dark:border-[#282e39] rounded-xl overflow-hidden">
-                                <table className="w-full text-sm text-left font-body">
+                            <div className="bg-white dark:bg-[#1a2230] rounded-xl overflow-hidden border border-gray-200 dark:border-[#282e39]">
+                                <table className="w-full">
                                     <tbody className="divide-y divide-gray-200 dark:divide-[#282e39]">
                                         {product.fullSpecs?.map((spec, idx) => (
-                                            <tr key={idx} className={idx % 2 === 0 ? 'bg-gray-50 dark:bg-[#1a2230]/50' : 'bg-white dark:bg-transparent'}>
-                                                <th className="px-6 py-4 font-medium text-gray-900 dark:text-white w-1/3">
+                                            <tr key={idx} className={`transition-colors hover:bg-[#135bec]/5 dark:hover:bg-[#135bec]/10 ${
+                                                idx % 2 === 0 
+                                                    ? 'bg-white dark:bg-[#1a2230]' 
+                                                    : 'bg-gray-50 dark:bg-[#101622]'
+                                            }`}>
+                                                <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap w-1/3">
                                                     {spec.label}
-                                                </th>
-                                                <td className="px-6 py-4 text-gray-600 dark:text-gray-300">
+                                                </td>
+                                                <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
                                                     {spec.value}
                                                 </td>
                                             </tr>

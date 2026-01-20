@@ -7,9 +7,13 @@
 }
 
 .link {
-  color: #9da6b9;
+  color: #6b7280;
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+:global(.dark) .link {
+  color: #9da6b9;
 }
 
 .link:hover {
@@ -17,10 +21,18 @@
 }
 
 .separator {
+  color: #6b7280;
+}
+
+:global(.dark) .separator {
   color: #9da6b9;
 }
 
 .current {
-  color: #ffffff;
+  color: #1f2937;
   font-weight: 500;
+}
+
+:global(.dark) .current {
+  color: #ffffff;
 }

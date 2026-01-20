@@ -8,7 +8,7 @@ export default function MainLayout({ children }) {
             <Headers />
             <main style={{
                 flex: 1,
-                paddingTop: '80px',
+                paddingTop: '64px',
                 width: '100%'
             }}>
                 {children}

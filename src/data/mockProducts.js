@@ -1,4 +1,183 @@
 export const mockProducts = [
+    // Flash Sale Products - Sản phẩm đang có chương trình khuyến mãi đặc biệt
+    // Note: Trong database thật, ID sẽ là auto-increment integer (1, 2, 3...)
+    // Mock data dùng số lớn để tránh conflict với ID sản phẩm thường
+    {
+        id: 1001,
+        name: 'Tai nghe chống ồn Sony WH-1000XM5',
+        slug: 'tai-nghe-chong-on-sony-wh-1000xm5',
+        category: 'headphone',
+        brand: 'Sony',
+        rating: 4.8,
+        reviewCount: 256,
+        badges: ['flash-sale', 'hot'],
+        isFlashSale: true,
+        flashSaleInfo: {
+            discount: 40,
+            sold: 15,
+            stock: 20,
+            endTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000 + 30 * 1000) // 2h15m30s from now
+        },
+        price: 5990000,
+        originalPrice: 9990000,
+        discountPercent: 40,
+        stock: 20,
+        image: "https://content.abt.com/image.php/Sony-Silver-WH-1000XM5-Noise-Canceling-Headphones-WH1000XM5S-Side-Angled.jpg?image=/images/products/BDP_Images/Sony-Silver-WH-1000XM5-Noise-Canceling-Headphones-WH1000XM5S-Side-Angled.jpg&canvas=1&width=750&height=550",
+        gallery: [
+            "https://content.abt.com/image.php/Sony-Silver-WH-1000XM5-Noise-Canceling-Headphones-WH1000XM5S-Side-Angled.jpg?image=/images/products/BDP_Images/Sony-Silver-WH-1000XM5-Noise-Canceling-Headphones-WH1000XM5S-Side-Angled.jpg&canvas=1&width=750&height=550",
+            "https://www.soundguys.com/wp-content/uploads/2023/10/Sony-WXM5-Headphones-Featured-Image-1-scaled.jpg",
+            "http://www.moon-audio.com/cdn/shop/files/sony-wh-1000xm5-main-02__79373.1669671666.1280.1280.jpg?v=1719253283",
+            "https://cdn.mos.cms.futurecdn.net/LaM4xHqeVEorNnR6MbW4d5.jpg"
+        ],
+        description: 'Tai nghe chống ồn Sony WH-1000XM5 với công nghệ chống ồn hàng đầu thế giới, âm thanh Hi-Res Audio và thời lượng pin lên đến 30 giờ.',
+        specs: {
+            type: 'Over-ear',
+            connection: 'Bluetooth 5.2',
+            battery: '30 giờ',
+            noiseCancelling: 'Active (ANC)'
+        }
+    },
+    {
+        id: 1002,
+        name: 'iPhone 15 Pro Max 256GB Titan Tự Nhiên',
+        slug: 'iphone-15-pro-max-256gb-titan-tu-nhien',
+        category: 'smartphone',
+        brand: 'Apple',
+        rating: 4.9,
+        reviewCount: 1024,
+        badges: ['flash-sale', 'new'],
+        isFlashSale: true,
+        flashSaleInfo: {
+            discount: 15,
+            sold: 420,
+            stock: 50,
+            endTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000 + 30 * 1000)
+        },
+        price: 28990000,
+        originalPrice: 34990000,
+        discountPercent: 15,
+        stock: 50,
+        image: "https://m.media-amazon.com/images/I/616mZZm8-7L.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",
+        gallery: [
+            "https://m.media-amazon.com/images/I/616mZZm8-7L.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",
+            "https://www.apple.com/newsroom/images/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/tile/Apple-iPhone-15-Pro-lineup-hero-230912.jpg.landing-big_2x.jpg",
+            "https://business.uscellular.com/content/dam/uscc-business-site/iPhone_15_Pro_Max_Natural_Titanium_PDP_Image_Position-5__en-US.png",
+            "https://i.ytimg.com/vi/_HX5hP2VY1Y/maxresdefault.jpg"
+        ],
+        description: 'iPhone 15 Pro Max với chip A17 Pro mạnh mẽ, camera 48MP, màn hình Super Retina XDR và khung Titan cao cấp.',
+        specs: {
+            chip: 'Apple A17 Pro',
+            screen: '6.7 inch Super Retina XDR',
+            camera: '48MP + 12MP + 12MP',
+            battery: '4422 mAh'
+        }
+    },
+    {
+        id: 1003,
+        name: 'Bàn phím cơ Keychron K2 Pro Wireless',
+        slug: 'ban-phim-co-keychron-k2-pro-wireless',
+        category: 'keyboard',
+        brand: 'Keychron',
+        rating: 4.7,
+        reviewCount: 158,
+        badges: ['flash-sale', 'hot'],
+        isFlashSale: true,
+        flashSaleInfo: {
+            discount: 30,
+            sold: 90,
+            stock: 10,
+            endTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000 + 30 * 1000)
+        },
+        price: 1850000,
+        originalPrice: 2650000,
+        discountPercent: 30,
+        stock: 10,
+        image: "https://www.enostech.com/wp-content/uploads/2024/09/keychron-k2-pro-1024x576.jpg",
+        gallery: [
+            "https://www.enostech.com/wp-content/uploads/2024/09/keychron-k2-pro-1024x576.jpg",
+            "https://m.media-amazon.com/images/I/61ifjM1Ax5L._AC_UF894,1000_QL80_.jpg",
+            "https://cdn.shopify.com/s/files/1/0599/4977/7066/t/3/assets/keychronk8proqmkviawirelessmechanicalkeyboard-1670295775465-1670998071990_1200x.jpg?v=1670998072",
+            "https://m.media-amazon.com/images/S/aplus-media-library-service-media/e7dee5eb-d2d7-4ada-9d3d-5496b10da98d.__CR0,0,1200,900_PT0_SX600_V1___.jpg"
+        ],
+        description: 'Bàn phím cơ Keychron K2 Pro với hot-swappable switch, kết nối không dây, QMK/VIA customizable và LED RGB.',
+        specs: {
+            switch: 'Gateron G Pro',
+            layout: '75% (84 phím)',
+            connection: 'Bluetooth 5.1 + USB-C',
+            battery: '4000 mAh'
+        }
+    },
+    {
+        id: 1004,
+        name: 'Apple Watch Series 9 GPS 41mm',
+        slug: 'apple-watch-series-9-gps-41mm',
+        category: 'smartwatch',
+        brand: 'Apple',
+        rating: 4.6,
+        reviewCount: 89,
+        badges: ['flash-sale', 'new'],
+        isFlashSale: true,
+        flashSaleInfo: {
+            discount: 25,
+            sold: 20,
+            stock: 100,
+            endTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000 + 30 * 1000)
+        },
+        price: 9290000,
+        originalPrice: 12290000,
+        discountPercent: 25,
+        stock: 100,
+        image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/refurb-41-nc-alum-midnight-sport-band-midnight-s9?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1709581740513",
+        gallery: [
+            "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/refurb-41-nc-alum-midnight-sport-band-midnight-s9?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1709581740513",
+            "https://sm.pcmag.com/pcmag_me/review/a/apple-watc/apple-watch-series-9_r8w9.jpg",
+            "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/refurb-41-cell-alum-starlight-sport-band-starlight-s9?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1709329351317",
+            "https://i.ytimg.com/vi/MauYzgj5_po/maxresdefault.jpg"
+        ],
+        description: 'Apple Watch Series 9 với chip S9 mới, màn hình sáng hơn, tính năng sức khỏe toàn diện và watchOS 10.',
+        specs: {
+            chip: 'Apple S9',
+            screen: '1.69 inch Retina LTPO OLED',
+            battery: '18 giờ',
+            waterproof: '50m'
+        }
+    },
+    {
+        id: 1005,
+        name: 'Chuột Gaming Logitech G Pro X Superlight',
+        slug: 'chuot-gaming-logitech-g-pro-x-superlight',
+        category: 'mouse',
+        brand: 'Logitech',
+        rating: 4.9,
+        reviewCount: 342,
+        badges: ['flash-sale', 'hot'],
+        isFlashSale: true,
+        flashSaleInfo: {
+            discount: 50,
+            sold: 85,
+            stock: 3,
+            endTime: new Date(Date.now() + 2 * 60 * 60 * 1000 + 15 * 60 * 1000 + 30 * 1000)
+        },
+        price: 1500000,
+        originalPrice: 3000000,
+        discountPercent: 50,
+        stock: 3,
+        image: "https://m.media-amazon.com/images/I/61ykKLbddNL._AC_UF894,1000_QL80_.jpg",
+        gallery: [
+            "https://m.media-amazon.com/images/I/61ykKLbddNL._AC_UF894,1000_QL80_.jpg",
+            "https://m.media-amazon.com/images/I/51uy8gOG-iL._AC_UF894,1000_QL80_.jpg",
+            "https://content.abt.com/image.php/logitech-mouse-910-006636-top-view.jpg?image=/images/products/BDP_Images/logitech-mouse-910-006636-top-view.jpg&canvas=1&width=750&height=550",
+            "https://i.pcmag.com/imagery/reviews/075M2g2AHnvyMQaL5ekIe0k-1.fit_lim.size_1200x630.v1612555065.jpg"
+        ],
+        description: 'Chuột gaming không dây Logitech G Pro X Superlight siêu nhẹ chỉ 63g, sensor HERO 25K và pin 70 giờ.',
+        specs: {
+            sensor: 'HERO 25K',
+            dpi: '100-25,600',
+            weight: '63g',
+            battery: '70 giờ'
+        }
+    },
+
     // Laptop gaming & MacBook 
     {
         id: 1,
@@ -61,7 +240,10 @@ export const mockProducts = [
                 { name: 'Đen Xám', code: '#2A2A2A' },
                 { name: 'Xanh Gunmetal', code: '#3C4447' }
             ],
-            storages: ['512GB', '1TB']
+            storages: ['512GB', '1TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['16 inch'],
+            keyboard: ['RGB per-key']
         }],
         ratingDistribution: {
             5: 81,
@@ -116,7 +298,16 @@ export const mockProducts = [
             "https://i.pcmag.com/imagery/reviews/01FIvTZt1sIxZydOira9RYm-5.jpg",
             "https://www.gadgetpilipinas.net/wp-content/uploads/2023/07/MSI-Katana-15-B13VFK-Review-MSI-Katana-15-RTX-4060-2023-Review.jpg",
             "https://www.gdgtme.com/wp-content/uploads/2023/03/MSI-Katana-15-B13V-6-1024x768.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' }
+            ],
+            storages: ['512GB', '1TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['15.6 inch'],
+            keyboard: ['RGB 4-zone']
+        }]
     },
     {
         id: 3,
@@ -143,7 +334,16 @@ export const mockProducts = [
             "https://reviewcentralme.com/wp-content/uploads/2023/09/Nitro_v15.jpg",
             "https://images.hothardware.com/contentimages/newsitem/62627/content/16x9_2133x1200_highres-acer-nitro-v.jpg",
             "https://root-nation.com/wp-content/uploads/2025/01/acer-nitro-v15-anv15-41-r99y-ph61.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' }
+            ],
+            storages: ['512GB', '1TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['15.6 inch'],
+            keyboard: ['RGB 4-zone']
+        }]
     },
     {
         id: 4,
@@ -170,7 +370,16 @@ export const mockProducts = [
             "https://www.dateks.lv/images/pic/1200/630/385/1800.jpg",
             "https://laptopmedia.com/wp-content/uploads/2025/06/Lenovo-LOQ-Essential-15-Gen-9-15IAX9E-review-The-Best-Ultra-Budget-Gaming-Laptop.jpg",
             "https://images.expertreviews.co.uk/wp-content/uploads/2024/08/lenovo_loq_15iax9i_review_front_view.jpg?width=744&height=419&format=webply"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Xám Luna Grey', code: '#6B6B6B' }
+            ],
+            storages: ['512GB', '1TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['15.6 inch'],
+            keyboard: ['RGB 4-zone']
+        }]
     },
     {
         id: 5,
@@ -197,7 +406,17 @@ export const mockProducts = [
             "https://m.media-amazon.com/images/I/51fUKtubGsL._AC_UF894,1000_QL80_.jpg",
             "https://m.media-amazon.com/images/I/51N5D9eIwqL._AC_UF894,1000_QL80_.jpg",
             "https://m.media-amazon.com/images/I/51j1tv8KCdL._AC_UF894,1000_QL80_.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Xám Mica Silver', code: '#A9A9A9' },
+                { name: 'Xanh Ceramic White', code: '#F5F5F5' }
+            ],
+            storages: ['512GB', '1TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['15.6 inch'],
+            keyboard: ['RGB 1-zone']
+        }]
     },
     {
         id: 6,
@@ -224,7 +443,16 @@ export const mockProducts = [
             "https://www.notebookcheck.net/fileadmin/Notebooks/Asus/ROG_Strix_G16_G614JZ/Asus_ROG_Strix_14.jpg",
             "https://i.ytimg.com/vi/4P2JxbYLvA4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD-cavYSxazjAo92stT2pMvm5WnYQ",
             "https://dlcdnwebimgs.asus.com/files/media/71a33ba1-1be2-44c1-9541-70b4c800abf8/v1/images/m-ksp-c_1.webp"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Xám Eclipse Gray', code: '#4D4D4D' }
+            ],
+            storages: ['1TB', '2TB'],
+            ram: ['32GB', '64GB'],
+            screenSize: ['16 inch'],
+            keyboard: ['RGB per-key']
+        }]
     },
     {
         id: 7,
@@ -251,7 +479,16 @@ export const mockProducts = [
             "https://assetsio.gnwcdn.com/msi%20ge76%20raider%20main%20image.jpg?width=690&quality=85&format=jpg&dpr=3&auto=webp",
             "https://www.engineering.com/wp-content/uploads/2024/05/3_thumbnail2.png",
             "https://c1.neweggimages.com/ProductImageCompressAll300/34-155-720-V85.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen Core Black', code: '#000000' }
+            ],
+            storages: ['2TB', '4TB'],
+            ram: ['32GB', '64GB'],
+            screenSize: ['17.3 inch'],
+            keyboard: ['RGB per-key SteelSeries']
+        }]
     },
     {
         id: 8,
@@ -278,7 +515,16 @@ export const mockProducts = [
             "https://s.yimg.com/ny/api/res/1.2/yqECu9zIS6krrwpD0e8QAg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD04Mjg-/https://o.aolcdn.com/hss/storage/midas/38ec1d6d84d43b6957a7bf1f9c1d75c0/200214005/gigabyte-AORUS-x3-plus.jpg",
             "https://i.ytimg.com/vi/gnTtRprh0uY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBonYetaufdlIr_-mRRa5AvGEfnAg",
             "https://www.notebookcheck.net/fileadmin/Notebooks/Aorus/MASTER_16_AM6H/title-4.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' }
+            ],
+            storages: ['1TB', '2TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['16 inch'],
+            keyboard: ['RGB per-key']
+        }]
     },
     {
         id: 9,
@@ -305,7 +551,16 @@ export const mockProducts = [
             "https://i.insider.com/652eac84be9edfa8eda2c156?width=800&format=jpeg&auto=webp",
             "https://laptopmedia.com/wp-content/uploads/2021/10/dellg155515featured.jpg",
             "https://blog.bestbuy.ca/wp-content/uploads/2021/08/DSC00278-min.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen Shadow Grey', code: '#333333' }
+            ],
+            storages: ['1TB', '2TB'],
+            ram: ['16GB', '32GB'],
+            screenSize: ['15.6 inch'],
+            keyboard: ['RGB 4-zone']
+        }]
     },
     {
         id: 10,
@@ -330,7 +585,17 @@ export const mockProducts = [
             "https://www.macworld.com/wp-content/uploads/2025/04/M4-MacBook-Pros-right-angle.jpg?quality=50&strip=all",
             "https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2025/10/apple-macbook-pro-14-in-m5-hero.png",
             "https://cdn.mos.cms.futurecdn.net/cvQtDKDUTNSoy9ycSko8Ve.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Bạc', code: '#C0C0C0' },
+                { name: 'Xám Không Gian', code: '#4D4D4D' }
+            ],
+            storages: ['512GB', '1TB', '2TB'],
+            ram: ['16GB', '24GB', '48GB'],
+            screenSize: ['14 inch', '16 inch'],
+            keyboard: ['Backlit Magic Keyboard']
+        }]
     },
     // Phone
     {
@@ -394,7 +659,8 @@ export const mockProducts = [
                 { name: 'Titan Trắng', code: '#F2F3EE' },
                 { name: 'Titan Đen', code: '#202532' }
             ],
-            storages: ['256GB', '512GB', '1TB']
+            storages: ['256GB', '512GB', '1TB'],
+            ram: ['8GB']
         }],
         ratingDistribution: {
             5: 81,
@@ -449,7 +715,17 @@ export const mockProducts = [
             "https://i0.wp.com/lukaesenko.com/wp-content/uploads/2024/11/pexels-japy-29020349-copy.jpg?fit=1600%2C1067&ssl=1",
             "https://cdn.mos.cms.futurecdn.net/VcNfLPoyjzKkB2a9xr5QB5.jpg",
             "https://www.att.com/scmsassets/global/devices/phones/apple/apple-iphone-16-pro-max/gallery/desert-titanium-1.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Sa Mạc Titan', code: '#C9BFA4' },
+                { name: 'Trắng Titan', code: '#F0F0F0' },
+                { name: 'Đen Titan', code: '#1A1A1A' },
+                { name: 'Xanh Titan', code: '#2F3D4A' }
+            ],
+            storages: ['256GB', '512GB', '1TB'],
+            ram: ['8GB']
+        }]
     },
     {
         id: 13,
@@ -476,7 +752,17 @@ export const mockProducts = [
             "https://cdn.mos.cms.futurecdn.net/iF3mgEfjeKWNLW9YxqZeuF.jpeg",
             "https://img.global.news.samsung.com/uk/wp-content/uploads/2024/09/001-Truly-Pro-How-Galaxy-S24Ultra-Unleashes-Your-Inner-Photographer.jpg",
             "https://images.samsung.com/levant/smartphones/galaxy-s24-ultra/images/galaxy-s24-ultra-highlights-color-titanium-violet-back-mo.jpg?imbypass=true"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Titan Xanh', code: '#2F4F4F' },
+                { name: 'Titan Vàng', code: '#DAA520' },
+                { name: 'Titan Tím', code: '#4B0082' },
+                { name: 'Titan Xám', code: '#808080' }
+            ],
+            storages: ['256GB', '512GB', '1TB'],
+            ram: ['12GB']
+        }]
     },
     {
         id: 14,
@@ -501,10 +787,20 @@ export const mockProducts = [
             "https://lh3.googleusercontent.com/0KSCWElJQL9wcDa58Lpml9jq2IWY5AD8Ick3XVdtyZ_cu0VxkKWWcr8D7nR98_VPoBQjAUZ1tQCJdok_4qYoSV1hykjeeRb2JU_irg=w1200",
             "https://www.cnet.com/a/img/resize/ad99814a887ec09d80ab6cbb3915f564329ab597/hub/2024/08/20/2f65435a-2b82-4deb-b26d-56aa74663e09/pixel-9-pro-xl-review-lanxon-43.jpg?auto=webp&fit=crop&height=900&width=1200",
             "https://www.droid-life.com/2024/07/12/pixel-9-pro-goes-up-against-pixel-9-in-early-hands-on-video/pixel-9-and-pixel-9-pro-1/"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen Obsidian', code: '#000000' },
+                { name: 'Trắng Porcelain', code: '#FFFFFF' },
+                { name: 'Xanh Hazel', code: '#556B2F' },
+                { name: 'Hồng Rose', code: '#FFC0CB' }
+            ],
+            storages: ['128GB', '256GB', '512GB', '1TB'],
+            ram: ['12GB', '16GB']
+        }]
     },
     {
-        id: 14,
+        id: 15,
         name: "Điện thoại Xiaomi 14 Ultra",
         slug: "dien-thoai-xiaomi-14-ultra",
         category: "smartphone",
@@ -528,10 +824,18 @@ export const mockProducts = [
             "https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-14-ultra/m/78f9eac27b912d93298bf2a06f8821f4.jpg",
             "https://i.ytimg.com/vi/mEhRbMCJh08/maxresdefault.jpg",
             "http://reviewcentralme.com/wp-content/uploads/2024/02/Xiaomi-MWC-2024-1.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' },
+                { name: 'Trắng', code: '#FFFFFF' }
+            ],
+            storages: ['256GB', '512GB', '1TB'],
+            ram: ['12GB', '16GB']
+        }]
     },
     {
-        id: 15,
+        id: 16,
         name: "Điện thoại OPPO Find X8 Pro",
         slug: "dien-thoai-oppo-find-x8-pro",
         category: "smartphone",
@@ -553,11 +857,19 @@ export const mockProducts = [
             "https://www.oppo.com/content/dam/oppo/product-asset-library/find/find-x8-series/en/oppo-find-x8-pro/white-apac/assets/images-color-konka-l-1-mo.jpg",
             "https://www.vopmart.com/media/wysiwyg/OPPO/oppo-find-x8-pro-review-02.jpg",
             "https://www.dxomark.com/wp-content/uploads/medias/post-179939/Oppo-Find-X8-Pro_featured-image-packshot-review.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Trắng Pearl', code: '#F5F5F5' },
+                { name: 'Đen Space', code: '#000000' }
+            ],
+            storages: ['256GB', '512GB', '1TB'],
+            ram: ['12GB', '16GB']
+        }]
     },
     // Audio
     {
-        id: 16,
+        id: 17,
         name: "Tai nghe Apple AirPods Pro 2",
         slug: "tai-nghe-apple-airpods-pro-2",
         category: "audio",
@@ -580,10 +892,18 @@ export const mockProducts = [
             "https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907.jpg.landing-big_2x.jpg",
             "https://cdn.outsideonline.com/wp-content/uploads/2022/09/AIRPODS_PRO2_h.jpg",
             "https://i.rtings.com/assets/products/Tt1f03oR/apple-airpods-pro-2nd-generation-truly-wireless/build-quality-small.jpg?format=auto"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Trắng', code: '#FFFFFF' }
+            ],
+            storages: [], // Không áp dụng
+            connectivity: ['Bluetooth 5.3'],
+            chargingCase: ['USB-C', 'MagSafe']
+        }]
     },
     {
-        id: 17,
+        id: 18,
         name: "Tai nghe Sony WH-1000XM5",
         slug: "tai-nghe-sony-wh-1000xm5",
         category: "audio",
@@ -606,10 +926,19 @@ export const mockProducts = [
             "http://www.moon-audio.com/cdn/shop/files/sony-wh-1000xm5-main-02__79373.1669671666.1280.1280.jpg?v=1719253283",
             "https://i.rtings.com/assets/products/Nc33W9lA/sony-wh-1000xm5-wireless/design-medium.jpg?format=auto",
             "https://b2c-contenthub.com/wp-content/uploads/2022/05/Sony-WH-1000XM5-ear-cup-side.jpg?quality=50&strip=all&w=1200"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' },
+                { name: 'Bạc', code: '#C0C0C0' }
+            ],
+            storages: [], // Không áp dụng
+            connectivity: ['Bluetooth 5.2', 'Multipoint'],
+            batteryLife: ['30 giờ ANC on', '40 giờ ANC off']
+        }]
     },
     {
-        id: 18,
+        id: 19,
         name: "Loa JBL Charge 5",
         slug: "loa-jbl-charge-5",
         category: "audio",
@@ -631,10 +960,23 @@ export const mockProducts = [
             "https://www.cnet.com/a/img/resize/87c90c32f89d68929800e1f50ae223d357be73d8/hub/2021/01/07/4b75e972-2142-48b2-94db-3919b14d5f26/jbl-charge-5.png?auto=webp&fit=crop&height=675&width=1200",
             "https://www.popsci.com/wp-content/uploads/2021/06/14/IMG_0476-scaled.jpg?quality=85&w=768",
             "https://i.ytimg.com/vi/ytnsieD3enU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCyZk_Znh99kiW5AIgZpbK5qoc2AQ"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' },
+                { name: 'Xanh', code: '#008000' },
+                { name: 'Đỏ', code: '#FF0000' },
+                { name: 'Xám', code: '#808080' },
+                { name: 'Cam', code: '#FFA500' }
+            ],
+            storages: [], // Không áp dụng
+            connectivity: ['Bluetooth 5.1'],
+            batteryLife: ['20 giờ'],
+            powerOutput: ['40W']
+        }]
     },
     {
-        id: 19,
+        id: 20,
         name: "Tai nghe Bose QuietComfort Ultra",
         slug: "tai-nghe-bose-quietcomfort-ultra",
         category: "audio",
@@ -655,10 +997,20 @@ export const mockProducts = [
             "https://www.cnet.com/a/img/resize/c9d8fcca10fcf12be1f26cff5192948c5e033be2/hub/2023/10/05/c0041317-8d33-4e63-a688-211449b763c3/bose-quietcomfort-ultra-earbuds-silver2.jpg?auto=webp&fit=crop&height=362&width=644",
             "https://www.zdnet.com/a/img/2023/10/30/cdd61de8-2409-43b9-b926-ad65690ab327/qcultrahero.jpg",
             "https://sm.mashable.com/mashable_sea/review/r/review-bos/review-bose-quietcomfort-ultra-are-the-most-comfortable-head_hy16.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' },
+                { name: 'Trắng Smoke', code: '#F5F5F5' },
+                { name: 'Xanh Lunar Blue', code: '#001F3F' }
+            ],
+            storages: [], // Không áp dụng
+            connectivity: ['Bluetooth 5.3', 'Multipoint'],
+            batteryLife: ['24 giờ ANC on', '27 giờ ANC off']
+        }]
     },
     {
-        id: 20,
+        id: 21,
         name: "Tai nghe Samsung Galaxy Buds3 Pro",
         slug: "tai-nghe-samsung-galaxy-buds3-pro",
         category: "audio",
@@ -681,11 +1033,21 @@ export const mockProducts = [
             "https://images.samsung.com/is/image/samsung/assets/us/galaxy-buds3-pro/images/galaxy-buds3-pro-intuitive-control-tab01-startframe-mo_0710.jpg?imbypass=true",
             "https://image-us.samsung.com/SamsungUS/home/mobile/audio/headphones/buds3-gallery/SCOMB6Q6-887-SM-R630_001_Front_White_RGB-1600x1200.jpg?$product-details-jpg$",
             "https://www.androidauthority.com/wp-content/uploads/2024/07/Samsung-Galaxy-Buds-3-Pro-close-up.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Bạc', code: '#C0C0C0' },
+                { name: 'Trắng', code: '#FFFFFF' }
+            ],
+            storages: [], // Không áp dụng
+            connectivity: ['Bluetooth 5.4'],
+            batteryLife: ['30 giờ with case'],
+            anc: ['Adaptive ANC']
+        }]
     },
     // Smartwatch 
     {
-        id: 21,
+        id: 22,
         name: "Đồng hồ Apple Watch Ultra 2",
         slug: "dong-ho-apple-watch-ultra-2",
         category: "smartwatch",
@@ -706,10 +1068,18 @@ export const mockProducts = [
             "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-side-button-Digital-Crown-230912_Full-Bleed-Image.jpg.large.jpg",
             "https://cdn.cs.1worldsync.com/dc/8a/dc8addd4-fdef-4d3d-aef7-ef0fbc35f440.jpg",
             "https://i.insider.com/6500c5f81afe8f0019e90db9?width=700"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Titan Tự Nhiên', code: '#B6B5A9' }
+            ],
+            storages: ['64GB'],
+            bandTypes: ['Alpine Loop', 'Trail Loop', 'Ocean Band'],
+            sizes: ['49mm']
+        }]
     },
     {
-        id: 22,
+        id: 23,
         name: "Đồng hồ Samsung Galaxy Watch 7",
         slug: "dong-ho-samsung-galaxy-watch-7",
         category: "smartwatch",
@@ -730,10 +1100,20 @@ export const mockProducts = [
             "https://i.ytimg.com/vi/8pCLyj-dwFQ/maxresdefault.jpg",
             "https://i.ytimg.com/vi/B_VSUOdVvsQ/maxresdefault.jpg",
             "https://i.ytimg.com/vi/4lJK5eKhlns/maxresdefault.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Xanh Cream', code: '#F5F5DC' },
+                { name: 'Bạc', code: '#C0C0C0' },
+                { name: 'Xanh Lục', code: '#228B22' }
+            ],
+            storages: ['32GB'],
+            bandTypes: ['Sport Band'],
+            sizes: ['40mm', '44mm']
+        }]
     },
     {
-        id: 23,
+        id: 24,
         name: "Đồng hồ Garmin Venu 3",
         slug: "dong-ho-garmin-venu-3",
         category: "smartwatch",
@@ -754,10 +1134,19 @@ export const mockProducts = [
             "https://cdn.mos.cms.futurecdn.net/SicvCQA8CsHUG3TXoyQdmj.jpeg",
             "https://i.ytimg.com/vi/TUM2bQvrMVM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCpBve-gD6o2WJmebEYW4L6LOJBXQ",
             "https://garminrumors.com/wp-content/uploads/2025/01/Venu-3-Elevate-Gen-5-v-4-scaled.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Trắng', code: '#FFFFFF' },
+                { name: 'Đen', code: '#000000' }
+            ],
+            storages: ['8GB'],
+            bandTypes: ['Silicone'],
+            sizes: ['45mm', '41mm']
+        }]
     },
     {
-        id: 24,
+        id: 25,
         name: "Đồng hồ Huawei Watch GT 5",
         slug: "dong-ho-huawei-watch-gt-5",
         category: "smartwatch",
@@ -780,10 +1169,20 @@ export const mockProducts = [
             "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5-pro/images/kv/huawei-watch-gt-5-pro-kv.jpg",
             "https://consumer.huawei.com/dam/content/dam/huawei-cbg-site/common/mkt/pdp/wearables/watch-gt5/img/s16/huawei-watch-gt-5-strap.png",
             "https://www.huaweicentral.com/wp-content/uploads/2024/09/Watch-GT-5-variants.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Vàng', code: '#FFD700' },
+                { name: 'Bạc', code: '#C0C0C0' },
+                { name: 'Đen', code: '#000000' }
+            ],
+            storages: ['16GB'],
+            bandTypes: ['Fluoroelastomer', 'Leather'],
+            sizes: ['46mm', '41mm']
+        }]
     },
     {
-        id: 25,
+        id: 26,
         name: "Đồng hồ Xiaomi Watch S3",
         slug: "dong-ho-xiaomi-watch-s3",
         category: "smartwatch",
@@ -804,11 +1203,20 @@ export const mockProducts = [
             "https://www.gadgetmatch.com/wp-content/uploads/2024/03/xiaomi-watch-s3-barcelona-plus-20240306-10.jpg",
             "https://www.vopmart.com/media/wysiwyg/Xiaomi/Watch/xiaomi-watch-s3-review-06.jpg",
             "https://www.cnet.com/a/img/resize/aaf2f3a7226a790b62c2cc1f3dd601843be4a3ed/hub/2024/02/25/d232f49e-cee5-4df8-a502-152475465c5d/xiaomi-watches-mwc-2024.jpg?auto=webp&fit=crop&height=675&width=1200"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Đen', code: '#000000' },
+                { name: 'Bạc', code: '#C0C0C0' }
+            ],
+            storages: ['16GB'],
+            bandTypes: ['Silicone', 'Leather'],
+            sizes: ['47mm']
+        }]
     },
     // Smart home
     {
-        id: 26,
+        id: 27,
         name: "Camera Google Nest Cam Indoor",
         slug: "camera-google-nest-cam-indoor",
         category: "smart-home",
@@ -829,10 +1237,18 @@ export const mockProducts = [
             "https://www.cnet.com/a/img/resize/972cc85011b8d862f25b21c05f61c43731a68ac0/hub/2021/10/06/2ea83d98-3971-4f5e-b968-93d7e696c2af/20211005-134622.jpg?auto=webp&fit=crop&height=362&width=644",
             "https://reviewed-com-res.cloudinary.com/image/fetch/s--iTvHEQL8--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_972/https://reviewed-production.s3.amazonaws.com/1558020250785/Nest-Cam-vs-Nest-Cam-IQ.jpg",
             "https://i.ytimg.com/vi/owo-l45k9z8/maxresdefault.jpg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Trắng', code: '#FFFFFF' }
+            ],
+            storages: [], // Không áp dụng
+            resolution: ['1080p'],
+            powerSource: ['Wired']
+        }]
     },
     {
-        id: 27,
+        id: 28,
         name: "Bóng đèn Philips Hue White & Color",
         slug: "bong-den-philips-hue-white-color",
         category: "smart-home",
@@ -855,10 +1271,17 @@ export const mockProducts = [
             "https://m.media-amazon.com/images/I/617BRWxzN8L._AC_UF894,1000_QL80_.jpg",
             "https://b2c-contenthub.com/wp-content/uploads/2024/01/philips-hue-secure-camera-starter-kit.jpg?quality=50&strip=all&w=1200",
             "https://www.assets.signify.com/is/image/Signify/046677592530-929004235501-E26-UI-ATF-APP?wid=1280&hei=960&qlt=82"
-        ]
+        ],
+        variants: [{
+            colors: [], // Không áp dụng cho bóng đèn
+            storages: [], // Không áp dụng
+            baseType: ['E27', 'GU10'],
+            lumen: ['800lm'],
+            connectivity: ['Bluetooth', 'Zigbee']
+        }]
     },
     {
-        id: 28,
+        id: 29,
         name: "Loa thông minh Amazon Echo Dot 5th Gen",
         slug: "loa-thong-minh-amazon-echo-dot-5",
         category: "smart-home",
@@ -878,10 +1301,20 @@ export const mockProducts = [
             "http://reviewcentralme.com/wp-content/uploads/2022/12/Amazon-Echo-Dot-5th-generation-review-1.jpg",
             "https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/407823-smart-speakers-amazon-echo-dot-5th-gen-w-clock-10033746.png",
             "https://www.cnet.com/a/img/resize/19412a37446ca922d1f41e579727fc182ddadab2/hub/2022/10/20/100951b8-b753-40c9-bd7a-aaee5a6fdcee/img-2839.jpg?auto=webp&width=1200"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Xám Glacier White', code: '#F0F8FF' },
+                { name: 'Xanh Charcoal', code: '#36454F' },
+                { name: 'Xanh Deep Sea Blue', code: '#000080' }
+            ],
+            storages: [], // Không áp dụng
+            features: ['With Clock', 'Without Clock'],
+            connectivity: ['Wi-Fi', 'Bluetooth']
+        }]
     },
     {
-        id: 29,
+        id: 30,
         name: "Ổ cắm thông minh TP-Link Kasa Smart Plug",
         slug: "o-cam-thong-minh-tp-link-kasa",
         category: "smart-home",
@@ -901,10 +1334,18 @@ export const mockProducts = [
             "https://homekitnews.com/wp-content/uploads/2023/03/kasa-smart-plug-matter-nw-fi.jpg",
             "https://images.crutchfieldonline.com/ImageHandler/trim/750/457/products/2019/35/624/g624HS107-M.jpg",
             "https://media.cnn.com/api/v1/images/stellar/prod/kasa-smart-plug.jpg?c=16x9&q=h_833,w_1480,c_fill"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Trắng', code: '#FFFFFF' }
+            ],
+            storages: [], // Không áp dụng
+            packSize: ['1-pack', '2-pack', '4-pack'],
+            compatibility: ['Alexa', 'Google Assistant', 'IFTTT']
+        }]
     },
     {
-        id: 30,
+        id: 31,
         name: "Chuông cửa Ring Video Doorbell",
         slug: "chuong-cua-ring-video-doorbell",
         category: "smart-home",
@@ -925,7 +1366,16 @@ export const mockProducts = [
             "https://images.ctfassets.net/a3peezndovsu/4bth2uz7cA1JyL2LqSd9oU/37f2d4d3da87b6ac955ffb38cc2bf755/ring_video_doorbell_5050_split_plus_desktop_2x.jpg",
             "https://www.digitaltrends.com/tachyon/2021/03/ring_video_doorbell_pro_2_angle2-scaled.jpg?fit=2560%2C1920",
             "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:125,cw:1250,ch:938,q:80,w:1250/w9YKLCBUQF9UUnYCe7HoWH.jpeg"
-        ]
+        ],
+        variants: [{
+            colors: [
+                { name: 'Bạc Satin Nickel', code: '#A9A9A9' },
+                { name: 'Đồng Venetian Bronze', code: '#CD7F32' }
+            ],
+            storages: [], // Không áp dụng
+            powerSource: ['Battery', 'Wired'],
+            resolution: ['1080p']
+        }]
     }
 ].map(product => ({
     ...product,

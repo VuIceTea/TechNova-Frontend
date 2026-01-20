@@ -15,13 +15,19 @@
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: 1px solid #282e39;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-  color: #9da6b9;
+  color: #6b7280;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+:global(.dark) .navButton,
+:global(.dark) .pageButton {
+  border: 1px solid #282e39;
+  color: #9da6b9;
 }
 
 .navButton {
@@ -30,6 +36,12 @@
 
 .navButton:hover:not(:disabled),
 .pageButton:hover:not(.active) {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+:global(.dark) .navButton:hover:not(:disabled),
+:global(.dark) .pageButton:hover:not(.active) {
   background-color: #282e39;
   color: white;
 }
@@ -53,8 +65,12 @@
   justify-content: center;
   min-width: 40px;
   height: 40px;
-  color: #9da6b9;
+  color: #6b7280;
   font-size: 14px;
+}
+
+:global(.dark) .ellipsis {
+  color: #9da6b9;
 }
 
 .chevronIcon {
