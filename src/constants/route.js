@@ -5,6 +5,7 @@ const ROUTES = {
     PRODUCT_DETAIL: '/product/:slug',
     PROMOTIONS: '/promotions',
     SUPPORT: '/support',
+    NEWS: '/news',
     ABOUT: '/about',
     CONTACT: '/contact',
     SERVICES: '/services',
