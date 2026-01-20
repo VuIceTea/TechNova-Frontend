@@ -12,6 +12,8 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Promo from "./pages/Promo";
 import Support from "./pages/Support";
+import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
@@ -40,6 +42,8 @@ function App() {
                   <Route path='/profile' element={<Profile />} />
                   <Route path='/promotions' element={<Promo />} />
                   <Route path='/support' element={<Support />} />
+                  <Route path='/news' element={<News />} />
+                  <Route path='/news/:slug' element={<NewsDetail />} />
                 </Routes>
               </MainLayout>
             } />

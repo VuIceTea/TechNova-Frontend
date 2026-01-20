@@ -40,7 +40,7 @@ const Header = () => {
             <nav className="hidden lg:flex items-center gap-9 ml-9">
                 <Link to="/" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Trang chủ</Link>
                 <Link to="/category" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Sản phẩm</Link>
-                <Link to="/promotions" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Khuyến mãi</Link>
+                <Link to="/news" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Tin tức</Link>
                 <Link to="/support" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Hỗ trợ</Link>
             </nav>
 
