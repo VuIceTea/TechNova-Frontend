@@ -139,7 +139,7 @@ const News = () => {
                     </section>
 
                     {/* Search and Filters */}
-                    <section className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between sticky top-[72px] z-40 bg-[#f6f6f8]/95 dark:bg-[#101622]/95 backdrop-blur-sm py-4 -my-4 border-b border-[#282e39] lg:border-none lg:bg-transparent lg:static">
+                    <section className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between sticky top-18 z-40 bg-[#f6f6f8]/95 dark:bg-[#101622]/95 backdrop-blur-sm py-4 -my-4 border-b border-[#282e39] lg:border-none lg:bg-transparent lg:static">
                         {/* Search Bar */}
                         <div className="relative w-full lg:max-w-md group">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 dark:text-[#9da6b9] group-focus-within:text-[#135bec] transition-colors">
@@ -246,7 +246,7 @@ const News = () => {
                                 <article className="relative group overflow-hidden rounded-2xl border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] cursor-pointer">
                                     <div className="flex flex-col md:flex-row">
                                         {/* Image */}
-                                        <div className="md:w-2/3 h-[300px] md:h-[450px] overflow-hidden relative">
+                                        <div className="md:w-2/3 h-75 md:h-112.5 overflow-hidden relative">
                                             <div className="absolute top-4 left-4 z-20">
                                                 <span className="bg-[#135bec] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                                                     Tin nổi bật
@@ -257,7 +257,7 @@ const News = () => {
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                 src={featuredNews.thumbnail}
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent md:hidden"></div>
+                                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent md:hidden"></div>
                                         </div>
 
                                         {/* Content */}
@@ -378,7 +378,7 @@ const News = () => {
                     </section>
 
                     {/* Newsletter Section */}
-                    <section className="w-full bg-gradient-to-r from-[#135bec]/20 to-indigo-900/20 border border-[#135bec]/30 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 my-4">
+                    <section className="w-full bg-linear-to-r from-[#135bec]/20 to-indigo-900/20 border border-[#135bec]/30 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 my-4">
                         <div className="flex-1">
                             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                                 Đăng ký nhận tin tức công nghệ

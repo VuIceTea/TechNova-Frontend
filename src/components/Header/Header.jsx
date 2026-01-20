@@ -5,6 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useTheme } from '../../context/ThemeContext';
 import { useCart } from '../../context/CartContext';
 import { useAuth } from '../../context/AuthContext';
@@ -40,6 +41,7 @@ const Header = () => {
             <nav className="hidden lg:flex items-center gap-9 ml-9">
                 <Link to="/" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Trang chủ</Link>
                 <Link to="/category" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Sản phẩm</Link>
+                <Link to="/promotions" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Khuyến mãi</Link>
                 <Link to="/news" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Tin tức</Link>
                 <Link to="/support" className="text-gray-600 dark:text-[#9da6b9] text-sm font-medium leading-normal hover:text-[#135bec] dark:hover:text-white transition-colors">Hỗ trợ</Link>
             </nav>
@@ -74,6 +76,13 @@ const Header = () => {
                             <LightModeIcon className="text-yellow-400 cursor-pointer group-hover:rotate-180 transition-transform duration-500" fontSize="small" />
                         )}
                     </button>
+                    <Link
+                        to="/notifications"
+                        className="relative h-10 w-10 bg-gray-100 dark:bg-[#282e39] rounded-lg flex justify-center items-center hover:bg-gray-200 dark:hover:bg-[#3a4250] transition-all duration-300"
+                    >
+                        <NotificationsIcon className="text-gray-700 dark:text-white cursor-pointer" fontSize="small" />
+                        <span className="absolute top-2 right-2 flex items-center justify-center w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-[#282e39]"></span>
+                    </Link>
                     <Link
                         to="/cart"
                         className="relative h-10 w-10 bg-gray-100 dark:bg-[#282e39] rounded-lg flex justify-center items-center hover:bg-gray-200 dark:hover:bg-[#3a4250] transition-all duration-300"

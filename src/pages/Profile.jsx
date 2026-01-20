@@ -91,34 +91,46 @@ const Profile = () => {
 
                                 {/* Menu */}
                                 <nav className="flex flex-col gap-1">
-                                    <button
-                                        onClick={() => setActiveSection('account')}
-                                        className={`flex items-center gap-3 px-4 py-3 rounded-lg ${activeSection === 'account' ? 'bg-[#135bec]/10 text-[#135bec]' : 'text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white'} font-medium transition-all`}
+                                    <Link
+                                        to="/profile"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#135bec]/10 text-[#135bec] font-medium transition-all"
                                     >
                                         <PersonIcon style={{ fontSize: '22px' }} />
                                         Thông tin tài khoản
-                                    </button>
-                                    <button className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all">
+                                    </Link>
+                                    <Link 
+                                        to="/orders"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
+                                    >
                                         <InventoryIcon style={{ fontSize: '22px' }} />
                                         Đơn hàng của tôi
-                                    </button>
-                                    <button className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all">
+                                    </Link>
+                                    <Link 
+                                        to="/wishlist"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
+                                    >
                                         <FavoriteIcon style={{ fontSize: '22px' }} />
                                         Sản phẩm yêu thích
-                                    </button>
-                                    <button className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all">
+                                    </Link>
+                                    <Link 
+                                        to="/addresses"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
+                                    >
                                         <LocationOnIcon style={{ fontSize: '22px' }} />
                                         Sổ địa chỉ
-                                    </button>
-                                    <button className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white transition-all">
+                                    </Link>
+                                    <Link 
+                                        to="/notifications"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
+                                    >
                                         <NotificationsIcon style={{ fontSize: '22px' }} />
                                         Thông báo
                                         <span className="ml-auto bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
-                                    </button>
+                                    </Link>
                                     <div className="h-px bg-gray-100 dark:bg-[#232f48] my-2"></div>
                                     <button
                                         onClick={handleLogout}
-                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-all"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 font-medium transition-all"
                                     >
                                         <LogoutIcon style={{ fontSize: '22px' }} />
                                         Đăng xuất
