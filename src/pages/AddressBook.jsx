@@ -201,12 +201,12 @@ const AddressBook = () => {
               ))}
 
               {/* Map/Visual Element */}
-              <div className="relative rounded-xl overflow-hidden min-h-[240px] border border-slate-200 dark:border-[#2d343b]">
+              <div className="relative rounded-xl overflow-hidden min-h-60 border border-slate-200 dark:border-[#2d343b]">
                 <div 
                   className="absolute inset-0 bg-slate-200 dark:bg-[#1e2227] bg-cover bg-center opacity-50 dark:opacity-30"
                   style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRh2SXq1CIf3d1N5t98NKR-BJ-SnPiVJHtgrKQ6Eek1OBkotxHQR0xYhY46sCobV5IayXUOmh5tc05_cZSreZkt1Sm2wPGzICilpIXQXXsagcJ-iNXuOIS0LBvQTO9hlAUbZmcf68GgrK2XgJRV-0OfHY8e3uhhdCNISwUmvn3uxEsrn1s4Zm-OR6CH7ToBR4An3ZS8t5xLjwij_ptAHQdCjt_ZqPE-2rfLb5mu9m8zIO5Agc8rHtn_6qoNEu7uRRmULjJjt8LeOnY')" }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#f1f2f4] dark:from-[#17191c] to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#f1f2f4] dark:from-[#17191c] to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-sm font-bold uppercase tracking-widest text-[#135bec] mb-2">Giao hàng siêu tốc</p>
                   <h4 className="text-xl font-bold leading-tight">TechNova hỗ trợ giao hàng 2h tại TP.HCM & Hà Nội</h4>
