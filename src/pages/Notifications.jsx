@@ -130,7 +130,7 @@ const Notifications = () => {
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#13a4ec]"></div>
                       )}
                       
-                      <div className={`flex-shrink-0 size-12 rounded-lg flex items-center justify-center ${getIconColorClass(notification.iconColor)}`}>
+                      <div className={`shrink-0 size-12 rounded-lg flex items-center justify-center ${getIconColorClass(notification.iconColor)}`}>
                         <span className="material-symbols-outlined text-2xl">{notification.icon}</span>
                       </div>
 
@@ -181,7 +181,7 @@ const Notifications = () => {
                       </div>
 
                       {!notification.isRead && (
-                        <div className="flex-shrink-0 flex items-center">
+                        <div className="shrink-0 flex items-center">
                           <div className="size-2.5 rounded-full bg-[#13a4ec] shadow-[0_0_8px_rgba(19,164,236,0.6)]"></div>
                         </div>
                       )}
@@ -202,7 +202,7 @@ const Notifications = () => {
                       onClick={() => handleNotificationClick(notification.id)}
                       className="flex gap-4 p-4 rounded-xl bg-slate-50 dark:bg-zinc-800/40 border border-slate-200 dark:border-zinc-800 hover:bg-white dark:hover:bg-[#262629] transition-all cursor-pointer"
                     >
-                      <div className={`flex-shrink-0 size-12 rounded-lg flex items-center justify-center ${getIconColorClass(notification.iconColor)}`}>
+                      <div className={`shrink-0 size-12 rounded-lg flex items-center justify-center ${getIconColorClass(notification.iconColor)}`}>
                         <span className="material-symbols-outlined text-2xl">{notification.icon}</span>
                       </div>
 

@@ -77,7 +77,7 @@ const Orders = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
-          <aside className="w-full lg:w-64 flex-shrink-0">
+          <aside className="w-full lg:w-64 shrink-0">
             <div className="bg-white dark:bg-[#2E3236] rounded-xl border border-slate-200 dark:border-slate-800 p-4 sticky top-24">
               <div className="flex items-center gap-4 mb-8 p-2">
                 <div className="size-12 rounded-full bg-[#135bec] text-white flex items-center justify-center font-bold text-xl">N</div>
@@ -196,7 +196,7 @@ const Orders = () => {
                 <select
                   value={dateFilter}
                   onChange={(e) => setDateFilter(e.target.value)}
-                  className="bg-white dark:bg-[#2E3236] border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-sm focus:ring-[#135bec] focus:border-[#135bec] min-w-[160px]"
+                  className="bg-white dark:bg-[#2E3236] border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-sm focus:ring-[#135bec] focus:border-[#135bec] min-w-40"
                 >
                   <option value="all">Tất cả thời gian</option>
                   <option value="30days">30 ngày qua</option>
@@ -243,12 +243,12 @@ const Orders = () => {
                       <div className="flex items-center gap-4 overflow-hidden">
                         <div className="flex -space-x-3 overflow-hidden">
                           {order.products.map((product, idx) => (
-                            <div key={idx} className="size-16 rounded-lg border-2 border-white dark:border-[#2E3236] bg-slate-100 dark:bg-slate-800 flex-shrink-0">
+                            <div key={idx} className="size-16 rounded-lg border-2 border-white dark:border-[#2E3236] bg-slate-100 dark:bg-slate-800 shrink-0">
                               <img className="w-full h-full object-cover rounded-md" src={product.image} alt={product.name} />
                             </div>
                           ))}
                           {order.additionalCount > 0 && (
-                            <div className="size-16 rounded-lg border-2 border-white dark:border-[#2E3236] bg-slate-100 dark:bg-slate-800 flex-shrink-0 flex items-center justify-center">
+                            <div className="size-16 rounded-lg border-2 border-white dark:border-[#2E3236] bg-slate-100 dark:bg-slate-800 shrink-0 flex items-center justify-center">
                               <span className="text-xs font-bold text-slate-500">+{order.additionalCount}</span>
                             </div>
                           )}
