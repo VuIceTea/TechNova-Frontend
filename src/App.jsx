@@ -14,6 +14,10 @@ import Promo from "./pages/Promo";
 import Support from "./pages/Support";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import Orders from "./pages/Orders";
+import Wishlist from "./pages/Wishlist";
+import AddressBook from "./pages/AddressBook";
+import Notifications from "./pages/Notifications";
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
@@ -40,6 +44,10 @@ function App() {
                   <Route path='/cart' element={<Cart />} />
                   <Route path='/checkout' element={<Checkout />} />
                   <Route path='/profile' element={<Profile />} />
+                  <Route path='/orders' element={<Orders />} />
+                  <Route path='/wishlist' element={<Wishlist />} />
+                  <Route path='/addresses' element={<AddressBook />} />
+                  <Route path='/notifications' element={<Notifications />} />
                   <Route path='/promotions' element={<Promo />} />
                   <Route path='/support' element={<Support />} />
                   <Route path='/news' element={<News />} />

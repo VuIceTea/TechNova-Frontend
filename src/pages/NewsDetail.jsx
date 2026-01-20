@@ -68,7 +68,7 @@ const NewsDetail = () => {
 
     return (
         <div className="min-h-screen bg-[#f6f6f8] dark:bg-[#101622]">
-            <main className="flex-grow w-full max-w-350 mx-auto px-2 md:px-4 py-8">
+            <main className="grow w-full max-w-350 mx-auto px-2 md:px-4 py-8">
                 {/* Breadcrumbs */}
                 <div className="flex flex-wrap items-center gap-2 mb-8">
                     <Link to="/" className="text-gray-500 dark:text-[#9da6b9] text-sm font-medium hover:text-[#135bec] transition-colors">
@@ -79,7 +79,7 @@ const NewsDetail = () => {
                         Tin tức
                     </Link>
                     <span className="material-symbols-outlined text-gray-500 dark:text-[#9da6b9] text-[16px]">chevron_right</span>
-                    <span className="text-gray-900 dark:text-white text-sm font-medium truncate max-w-[200px] md:max-w-none">
+                    <span className="text-gray-900 dark:text-white text-sm font-medium truncate max-w-50 md:max-w-none">
                         {news.title}
                     </span>
                 </div>
@@ -166,7 +166,7 @@ const NewsDetail = () => {
                                 </div>
                                 <div className="flex-1">
                                     <textarea
-                                        className="w-full bg-white dark:bg-[#1a1f2b] border border-gray-300 dark:border-[#282e39] rounded-lg p-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#5a6275] focus:ring-2 focus:ring-[#135bec] focus:border-transparent outline-none resize-y min-h-[100px]"
+                                        className="w-full bg-white dark:bg-[#1a1f2b] border border-gray-300 dark:border-[#282e39] rounded-lg p-3 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-[#5a6275] focus:ring-2 focus:ring-[#135bec] focus:border-transparent outline-none resize-y min-h-25"
                                         placeholder="Chia sẻ suy nghĩ của bạn về bài viết này..."
                                         value={comment}
                                         onChange={(e) => setComment(e.target.value)}
@@ -280,7 +280,7 @@ const NewsDetail = () => {
                             )}
 
                             {/* Newsletter Signup */}
-                            <div className="bg-gradient-to-br from-[#135bec]/20 to-white dark:to-[#1a1f2b] rounded-xl p-6 border border-[#135bec]/20 text-center relative overflow-hidden">
+                            <div className="bg-linear-to-br from-[#135bec]/20 to-white dark:to-[#1a1f2b] rounded-xl p-6 border border-[#135bec]/20 text-center relative overflow-hidden">
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#135bec]/20 blur-[50px] rounded-full"></div>
                                 <h4 className="text-gray-900 dark:text-white font-bold mb-2 text-lg relative z-10">
                                     Đăng ký nhận tin

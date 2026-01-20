@@ -8,7 +8,7 @@ export const mockPromoBanner = [
         ButtonText: "Xem ưu đãi ngay",
         ButtonLink: "/sale",
         discountPercent: 40,
-        endTime: "2026-01-02T24:00:00",
+        endTime: "2026-01-21T24:00:00",
         background: {
             from: "#135bec",
             to: "#3c366b"
