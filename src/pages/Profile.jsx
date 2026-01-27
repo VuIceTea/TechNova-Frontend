@@ -96,30 +96,37 @@ const Profile = () => {
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#135bec]/10 text-[#135bec] font-medium transition-all"
                                     >
                                         <PersonIcon style={{ fontSize: '22px' }} />
-                                        Thông tin tài khoản
+                                        Thông tin cá nhân
                                     </Link>
-                                    <Link 
+                                    <Link
                                         to="/orders"
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
                                     >
                                         <InventoryIcon style={{ fontSize: '22px' }} />
                                         Đơn hàng của tôi
                                     </Link>
-                                    <Link 
+                                    <Link
                                         to="/wishlist"
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
                                     >
                                         <FavoriteIcon style={{ fontSize: '22px' }} />
                                         Sản phẩm yêu thích
                                     </Link>
-                                    <Link 
+                                    <Link
                                         to="/addresses"
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
                                     >
                                         <LocationOnIcon style={{ fontSize: '22px' }} />
                                         Sổ địa chỉ
                                     </Link>
-                                    <Link 
+                                    <Link
+                                        to="/profile"
+                                        className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
+                                    >
+                                        <span className="material-symbols-outlined" style={{ fontSize: '22px' }}>payments</span>
+                                        Phương thức thanh toán
+                                    </Link>
+                                    <Link
                                         to="/notifications"
                                         className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white font-medium transition-all"
                                     >
