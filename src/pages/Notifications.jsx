@@ -57,6 +57,13 @@ const Notifications = () => {
       <div className="layout-container flex h-full grow flex-col">
         <main className="grow px-3 md:px-4 lg:px-6 xl:px-8 py-8">
           <div className="max-w-400 mx-auto flex flex-col gap-6">
+            {/* Breadcrumbs */}
+            <nav className="flex items-center text-sm text-slate-500 dark:text-slate-400">
+              <Link className="hover:text-[#135bec] dark:hover:text-white transition-colors" to="/">Trang chủ</Link>
+              <span className="mx-2">/</span>
+              <span className="text-slate-900 dark:text-white font-medium">Thông báo</span>
+            </nav>
+
             {/* Page Heading */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
               <div>

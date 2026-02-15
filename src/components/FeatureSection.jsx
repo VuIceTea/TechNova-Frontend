@@ -11,7 +11,7 @@ const iconMap = {
     payments: PaymentsIcon,
 };
 
-export default function FeatureSection({ features }) {
+export default function FeatureSection({ features = [] }) {
     return (
         <section
             className="w-full mx-auto max-w-350 px-2 md:px-4 mb-16"

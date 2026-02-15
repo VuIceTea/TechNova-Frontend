@@ -219,7 +219,7 @@ const Cart = () => {
                                     {/* Price */}
                                     <div className="text-right w-full md:w-24 flex md:block justify-between items-center">
                                         <span className="md:hidden text-gray-500 dark:text-gray-400 text-sm">Đơn giá:</span>
-                                        <p className="text-gray-900 dark:text-white text-lg font-bold">
+                                        <p className="text-[#da2128] text-lg font-extrabold">
                                             {formatPrice(item.price * item.quantity)}
                                         </p>
                                     </div>
@@ -241,7 +241,7 @@ const Cart = () => {
                                 <div className="flex flex-col gap-4 mb-6">
                                     <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                         <span>Tạm tính</span>
-                                        <span className="font-medium text-gray-900 dark:text-white">
+                                        <span className="font-medium text-[#da2128]">
                                             {formatPrice(subtotal)}
                                         </span>
                                     </div>
@@ -285,7 +285,7 @@ const Cart = () => {
                                     <span className="text-lg font-bold text-gray-900 dark:text-white">
                                         Tổng cộng
                                     </span>
-                                    <span className="text-3xl font-bold text-[#135bec] tracking-tight">
+                                    <span className="text-3xl font-bold text-[#da2128] tracking-tight">
                                         {formatPrice(total)}
                                     </span>
                                 </div>
@@ -296,7 +296,7 @@ const Cart = () => {
                                     className="w-full bg-[#135bec] hover:bg-blue-600 text-white font-bold py-3.5 px-4 rounded-lg shadow-[0_0_15px_rgba(19,91,236,0.4)] transition-all hover:shadow-[0_0_25px_rgba(19,91,236,0.6)] flex items-center justify-center gap-2 group"
                                 >
                                     <span>Tiến hành thanh toán</span>
-                                    <ArrowForwardIcon className="group-hover:translate-x-1 transition-transform" style={{ fontSize: '20px' }} />
+                                    <ArrowForwardIcon className="transition-transform" style={{ fontSize: '20px' }} />
                                 </button>
 
                                 {/* Payment Icons */}

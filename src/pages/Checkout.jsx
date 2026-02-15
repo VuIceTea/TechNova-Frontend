@@ -355,7 +355,7 @@ const Checkout = () => {
                             <div className="space-y-3 text-sm">
                                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                     <span>Tạm tính</span>
-                                    <span className="font-medium text-gray-900 dark:text-white">{formatPrice(subtotal)}</span>
+                                    <span className="font-medium text-[#da2128]">{formatPrice(subtotal)}</span>
                                 </div>
                                 <div className="flex justify-between text-gray-600 dark:text-gray-400">
                                     <span>Phí vận chuyển</span>
@@ -375,8 +375,8 @@ const Checkout = () => {
                             <div className="flex justify-between items-end">
                                 <span className="text-lg font-bold text-gray-900 dark:text-white">Tổng cộng</span>
                                 <div className="flex flex-col items-end">
-                                    <span className="text-xs text-gray-500 dark:text-gray-400 mb-1">VND</span>
-                                    <span className="text-2xl font-bold tracking-tight text-[#135bec]">{formatPrice(total)}</span>
+                                    <span className="text-xs text-gray-500 dark:text-gray-400 mb-1">VNĐ</span>
+                                    <span className="text-2xl font-extrabold tracking-tight text-[#da2128]">{formatPrice(total)}</span>
                                 </div>
                             </div>
 

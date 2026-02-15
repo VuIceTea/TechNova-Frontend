@@ -15,7 +15,7 @@ const mapIcon = {
     home_iot: HomeIcon
 }
 
-export default function CategorySection({ categories }) {
+export default function CategorySection({ categories = [] }) {
     return (
         <section className="w-full mx-auto max-w-350 px-2 md:px-4 mb-16">
             <div className="flex items-center justify-between">

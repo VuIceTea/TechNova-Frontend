@@ -30,7 +30,7 @@ const ProductDetail = () => {
         const foundProduct = mockProducts.find(p => p.slug === slug);
         if (foundProduct) {
             setProduct(foundProduct);
-            
+
             if (foundProduct.variants && foundProduct.variants.length > 0) {
                 const defaultVariant = {
                     selectedColor: foundProduct.variants[0].colors?.[0] || null,
@@ -145,7 +145,7 @@ const ProductDetail = () => {
             'pin': 'battery_charging_full',
             'trọng lượng': 'scale',
             'hệ điều hành': 'computer',
-            
+
             // Smartphone specs
             'kích thước màn hình': 'smartphone',
             'công nghệ màn hình': 'display_settings',
@@ -153,21 +153,21 @@ const ProductDetail = () => {
             'camera trước': 'camera_front',
             'chipset': 'memory',
             'chip xử lý': 'memory',
-            
+
             // Audio specs
             'kết nối không dây': 'bluetooth',
             'thời lượng pin': 'battery_charging_full',
             'driver': 'speaker',
             'tần số': 'graphic_eq',
             'công nghệ âm thanh': 'volume_up',
-            
+
             // Smartwatch specs
             'kích thước mặt': 'watch',
             'vật liệu': 'category',
             'chống nước': 'water_drop',
             'cảm biến': 'sensors',
             'gps': 'location_on',
-            
+
             // Default
             'default': 'info'
         };
@@ -287,7 +287,7 @@ const ProductDetail = () => {
                         </div>
 
                         <div className="flex items-baseline gap-4">
-                            <span className="text-4xl font-bold text-[#135bec]">{formatPrice(product.price)}</span>
+                            <span className="text-4xl font-bold text-[#da2128]">{formatPrice(product.price)}</span>
                             {product.originalPrice && (
                                 <span className="text-xl text-gray-500 line-through">
                                     {formatPrice(product.originalPrice)}
@@ -314,27 +314,26 @@ const ProductDetail = () => {
                                             {product.variants[0].colors.map((color, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ 
-                                                        ...selectedVariant, 
-                                                        selectedColor: color 
+                                                    onClick={() => setSelectedVariant({
+                                                        ...selectedVariant,
+                                                        selectedColor: color
                                                     })}
-                                                    className={`relative w-12 h-12 rounded-full border-2 transition-all ${
-                                                        (selectedVariant?.selectedColor?.code === color.code) || 
+                                                    className={`relative w-12 h-12 rounded-full border-2 transition-all ${(selectedVariant?.selectedColor?.code === color.code) ||
                                                         (!selectedVariant?.selectedColor && idx === 0)
-                                                            ? 'border-[#135bec] scale-110'
-                                                            : 'border-gray-300 dark:border-gray-600 hover:border-[#135bec] hover:scale-105'
-                                                    }`}
+                                                        ? 'border-[#135bec] scale-110'
+                                                        : 'border-gray-300 dark:border-gray-600 hover:border-[#135bec] hover:scale-105'
+                                                        }`}
                                                     style={{ backgroundColor: color.code }}
                                                     title={color.name}
                                                 >
-                                                    {((selectedVariant?.selectedColor?.code === color.code) || 
-                                                      (!selectedVariant?.selectedColor && idx === 0)) && (
-                                                        <span className="absolute inset-0 flex items-center justify-center">
-                                                            <span className="material-symbols-outlined text-white text-[20px] drop-shadow-lg">
-                                                                check
+                                                    {((selectedVariant?.selectedColor?.code === color.code) ||
+                                                        (!selectedVariant?.selectedColor && idx === 0)) && (
+                                                            <span className="absolute inset-0 flex items-center justify-center">
+                                                                <span className="material-symbols-outlined text-white text-[20px] drop-shadow-lg">
+                                                                    check
+                                                                </span>
                                                             </span>
-                                                        </span>
-                                                    )}
+                                                        )}
                                                 </button>
                                             ))}
                                         </div>
@@ -353,16 +352,15 @@ const ProductDetail = () => {
                                             {product.variants[0].storages.map((storage, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ 
-                                                        ...selectedVariant, 
-                                                        selectedStorage: storage 
+                                                    onClick={() => setSelectedVariant({
+                                                        ...selectedVariant,
+                                                        selectedStorage: storage
                                                     })}
-                                                    className={`py-3 px-2 rounded-lg border-2 text-sm font-semibold text-center transition-all ${
-                                                        (selectedVariant?.selectedStorage === storage) || 
+                                                    className={`py-3 px-2 rounded-lg border-2 text-sm font-semibold text-center transition-all ${(selectedVariant?.selectedStorage === storage) ||
                                                         (!selectedVariant?.selectedStorage && idx === 0)
-                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
-                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
-                                                    }`}
+                                                        ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                        : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                        }`}
                                                 >
                                                     {storage}
                                                 </button>
@@ -383,16 +381,15 @@ const ProductDetail = () => {
                                             {product.variants[0].ram.map((ram, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ 
-                                                        ...selectedVariant, 
-                                                        selectedRam: ram 
+                                                    onClick={() => setSelectedVariant({
+                                                        ...selectedVariant,
+                                                        selectedRam: ram
                                                     })}
-                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${
-                                                        (selectedVariant?.selectedRam === ram) || 
+                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${(selectedVariant?.selectedRam === ram) ||
                                                         (!selectedVariant?.selectedRam && idx === 0)
-                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
-                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
-                                                    }`}
+                                                        ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                        : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                        }`}
                                                 >
                                                     {ram}
                                                 </button>
@@ -413,16 +410,15 @@ const ProductDetail = () => {
                                             {product.variants[0].screenSize.map((size, idx) => (
                                                 <button
                                                     key={idx}
-                                                    onClick={() => setSelectedVariant({ 
-                                                        ...selectedVariant, 
-                                                        selectedScreenSize: size 
+                                                    onClick={() => setSelectedVariant({
+                                                        ...selectedVariant,
+                                                        selectedScreenSize: size
                                                     })}
-                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${
-                                                        (selectedVariant?.selectedScreenSize === size) || 
+                                                    className={`py-2.5 px-5 rounded-lg border-2 text-sm font-semibold transition-all ${(selectedVariant?.selectedScreenSize === size) ||
                                                         (!selectedVariant?.selectedScreenSize && idx === 0)
-                                                            ? 'border-none bg-[#135bec] text-white shadow-lg'
-                                                            : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
-                                                    }`}
+                                                        ? 'border-none bg-[#135bec] text-white shadow-lg'
+                                                        : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#135bec] hover:bg-[#135bec]/5 bg-white dark:bg-[#1a2230]'
+                                                        }`}
                                                 >
                                                     {size}
                                                 </button>
@@ -504,11 +500,10 @@ const ProductDetail = () => {
                                 <table className="w-full">
                                     <tbody className="divide-y divide-gray-200 dark:divide-[#282e39]">
                                         {product.fullSpecs?.map((spec, idx) => (
-                                            <tr key={idx} className={`transition-colors hover:bg-[#135bec]/5 dark:hover:bg-[#135bec]/10 ${
-                                                idx % 2 === 0 
-                                                    ? 'bg-white dark:bg-[#1a2230]' 
-                                                    : 'bg-gray-50 dark:bg-[#101622]'
-                                            }`}>
+                                            <tr key={idx} className={`transition-colors hover:bg-[#135bec]/5 dark:hover:bg-[#135bec]/10 ${idx % 2 === 0
+                                                ? 'bg-white dark:bg-[#1a2230]'
+                                                : 'bg-gray-50 dark:bg-[#101622]'
+                                                }`}>
                                                 <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap w-1/3">
                                                     {spec.label}
                                                 </td>
@@ -643,7 +638,7 @@ const ProductDetail = () => {
                                             style={{ backgroundImage: `url('${relatedProduct.image}')` }}
                                         />
                                         {relatedProduct.badges?.includes('hot') && (
-                                            <span className="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
+                                            <span className="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded w-fit whitespace-nowrap">
                                                 HOT
                                             </span>
                                         )}

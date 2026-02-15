@@ -1,29 +1,64 @@
-import { mockProducts } from "../data/mockProducts";
+import API_ENDPOINTS from '../constants/apiEndpoints';
 
-export function getProducts() {
-    return Promise.resolve(mockProducts);
+const handleResponse = async (response) => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.data; // Return only the data property from backend response
 };
 
+export async function getProducts() {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRODUCTS.LIST);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        return [];
+    }
+}
+
 // Get only Flash Sale products
-export function getFlashSaleProducts() {
-    const flashSaleProducts = mockProducts.filter(product => product.isFlashSale === true);
-    return Promise.resolve(flashSaleProducts);
+export async function getFlashSaleProducts() {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRODUCTS.FLASH_SALE);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching flash sale products:', error);
+        return [];
+    }
 }
 
 // Get products excluding Flash Sale items
-export function getRegularProducts() {
-    const regularProducts = mockProducts.filter(product => !product.isFlashSale);
-    return Promise.resolve(regularProducts);
+export async function getRegularProducts() {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRODUCTS.LIST);
+        const products = await handleResponse(response);
+        return products.filter(product => !product.isFlashSale);
+    } catch (error) {
+        console.error('Error fetching regular products:', error);
+        return [];
+    }
 }
 
-// Get products by category (including Flash Sale items if they match)
-export function getProductsByCategory(category) {
-    const filtered = mockProducts.filter(product => product.category === category);
-    return Promise.resolve(filtered);
+// Get products by category
+export async function getProductsByCategory(category) {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRODUCTS.BY_CATEGORY(category));
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching products by category:', error);
+        return [];
+    }
 }
 
 // Get product by slug
-export function getProductBySlug(slug) {
-    const product = mockProducts.find(product => product.slug === slug);
-    return Promise.resolve(product);
+export async function getProductBySlug(slug) {
+    try {
+        const response = await fetch(API_ENDPOINTS.PRODUCTS.DETAIL(slug));
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching product:', error);
+        return null;
+    }
 }

@@ -90,7 +90,7 @@ const Register = () => {
                         <LightModeIcon className="text-yellow-500 dark:text-gray-500 transition-colors" fontSize="small" />
                         <button
                             onClick={toggleTheme}
-                            className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#135bec] focus:ring-offset-2"
+                            className="relative inline-flex h-6 w-11 items-center rounded-full transition-colors duration-300 focus:outline-none"
                             style={{ backgroundColor: theme === 'dark' ? '#135bec' : '#d1d5db' }}
                             aria-label="Chuyển đổi theme"
                         >
@@ -145,7 +145,7 @@ const Register = () => {
                                 <label className="text-xs font-medium text-slate-700 dark:text-slate-200">Họ và tên</label>
                                 <div className="relative">
                                     <input
-                                        className="w-full h-12 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-[#135bec] focus:border-transparent px-4 pl-11 transition-all"
+                                        className="w-full h-12 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-1 focus:ring-[#135bec] focus:border-transparent px-4 pl-11 transition-all"
                                         placeholder="Nhập họ và tên của bạn"
                                         type="text"
                                         name="fullName"
@@ -164,7 +164,7 @@ const Register = () => {
                                 <label className="text-sm font-medium text-slate-700 dark:text-slate-200">Địa chỉ Email</label>
                                 <div className="relative">
                                     <input
-                                        className="w-full h-10 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-[#135bec] focus:border-transparent px-4 pl-10 transition-all text-sm"
+                                        className="w-full h-12 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-1 focus:ring-[#135bec] focus:border-transparent px-4 pl-10 transition-all text-sm"
                                         placeholder="techlover@example.com"
                                         type="email"
                                         name="email"
@@ -184,7 +184,7 @@ const Register = () => {
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">Mật khẩu</label>
                                     <div className="relative">
                                         <input
-                                            className="w-full h-10 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-[#135bec] focus:border-transparent px-4 pr-10 transition-all text-sm"
+                                            className="w-full h-12 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-1 focus:ring-[#135bec] focus:border-transparent px-4 pr-10 transition-all text-sm"
                                             placeholder="••••••••"
                                             type={showPassword ? 'text' : 'password'}
                                             name="password"
@@ -205,7 +205,7 @@ const Register = () => {
                                     <label className="text-sm font-medium text-slate-700 dark:text-slate-200">Xác nhận mật khẩu</label>
                                     <div className="relative">
                                         <input
-                                            className="w-full h-10 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-[#135bec] focus:border-transparent px-4 pr-10 transition-all text-sm"
+                                            className="w-full h-12 rounded-lg bg-slate-50 dark:bg-[#192233] border border-slate-200 dark:border-[#232f48] text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-1 focus:ring-[#135bec] focus:border-transparent px-4 pr-10 transition-all text-sm"
                                             placeholder="••••••••"
                                             type={showConfirmPassword ? 'text' : 'password'}
                                             name="confirmPassword"

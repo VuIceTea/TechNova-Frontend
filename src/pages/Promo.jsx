@@ -127,7 +127,7 @@ const Promo = () => {
                             <div
                                 key={banner.id}
                                 className={`snap-center shrink-0 w-full ${index === 0 ? 'md:w-[60%] lg:w-[65%]' : 'md:w-[38%] lg:w-[33%]'
-                                    } flex flex-col gap-4 rounded-2xl bg-slate-50 dark:bg-[#1c1f27] shadow-sm ring-1 ring-slate-200 dark:ring-transparent overflow-hidden group relative min-h-[320px]`}
+                                    } flex flex-col gap-4 rounded-2xl bg-slate-50 dark:bg-[#1c1f27] shadow-sm ring-1 ring-slate-200 dark:ring-transparent overflow-hidden group relative min-h-80`}
                             >
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -146,7 +146,7 @@ const Promo = () => {
                                             {banner.title}
                                         </h1>
                                         <p className={`text-slate-200 ${index === 0 ? 'text-base md:text-lg' : 'text-sm'
-                                            } font-medium ${index === 0 ? 'max-w-[500px]' : ''}`}>
+                                            } font-medium ${index === 0 ? 'max-w-125' : ''}`}>
                                             {banner.subtitle}
                                         </p>
                                     </div>
@@ -203,7 +203,7 @@ const Promo = () => {
                 <section className="flex flex-col gap-6 pt-4">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 px-2">
                         <div className="flex items-center gap-3">
-                            <h2 className="text-2xl md:text-[32px] font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                            <h2 className="text-2xl md:text-[32px] font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-orange-500">
                                 ⚡ Flash Sale
                             </h2>
                             <div className="flex gap-1 items-center bg-slate-200 dark:bg-white/10 px-3 py-1 rounded-md">
@@ -245,18 +245,18 @@ const Promo = () => {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <h3 className="text-slate-900 dark:text-white text-sm font-medium line-clamp-2 min-h-[40px]">
+                                    <h3 className="text-slate-900 dark:text-white text-sm font-medium line-clamp-2 min-h-10">
                                         {deal.name}
                                     </h3>
                                     <div className="flex items-end gap-2">
-                                        <span className="text-primary text-base font-bold">{formatPrice(deal.salePrice)}</span>
+                                        <span className="text-[#da2128] text-base font-extrabold">{formatPrice(deal.salePrice)}</span>
                                         <span className="text-slate-400 text-xs line-through mb-0.5">
                                             {formatPrice(deal.originalPrice)}
                                         </span>
                                     </div>
-                                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-4 mt-2 relative overflow-hidden">
+                                    <div className="w-full bg-slate-300 dark:bg-slate-700 rounded-full h-4 mt-2 relative overflow-hidden">
                                         <div
-                                            className="bg-gradient-to-r from-red-500 to-orange-500 h-full rounded-full"
+                                            className="bg-linear-to-r from-red-500 to-orange-500 h-full rounded-full"
                                             style={{ width: `${getProgressWidth(deal.sold, deal.stock)}%` }}
                                         />
                                         <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-white uppercase tracking-wider">
@@ -310,7 +310,7 @@ const Promo = () => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="absolute top-0 bottom-0 left-[94px] w-4 -ml-2 flex flex-col justify-between">
+                                <div className="absolute top-0 bottom-0 left-23.5 w-4 -ml-2 flex flex-col justify-between">
                                     <div className="h-2 w-4 bg-background-light dark:bg-background-dark rounded-b-full" />
                                     <div className="h-2 w-4 bg-background-light dark:bg-background-dark rounded-t-full" />
                                 </div>
