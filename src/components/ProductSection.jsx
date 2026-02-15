@@ -6,9 +6,14 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import StarIcon from '@mui/icons-material/Star';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-export default function ProductSection({ products }) {
+export default function ProductSection({ products = [] }) {
     const scrollContainerRef = useRef(null);
     const { addToCart } = useCart();
+
+    // Filter and limit products with high ratings (>= 4.5) to 10 products
+    const highRatedProducts = products
+        .filter(product => product.rating >= 4.5)
+        .slice(0, 10);
 
     const handleAddToCart = (e, product) => {
         e.preventDefault();
@@ -86,7 +91,7 @@ export default function ProductSection({ products }) {
                 className="flex gap-4 overflow-x-auto overflow-y-hidden scroll-smooth scrollbar-hide"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {products.map((product) => {
+                {highRatedProducts.map((product) => {
                     const thumbnail = product.image;
                     const originalPrice = product.originalPrice || product.price;
                     const discountPercent = product.discountPercent || 0;
@@ -101,7 +106,7 @@ export default function ProductSection({ products }) {
                             <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
                                 {product.isFlashSale && (
                                     <span
-                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg animate-pulse"
+                                        className="w-fit text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg animate-pulse whitespace-nowrap"
                                         style={{ background: 'linear-gradient(to right, #fbbf24, #f59e0b)' }}
                                     >
                                         ⚡ FLASH SALE
@@ -109,7 +114,7 @@ export default function ProductSection({ products }) {
                                 )}
                                 {product.badges?.includes('hot') && (
                                     <span
-                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        className="w-fit text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap"
                                         style={{ background: 'linear-gradient(to right, #f97316, #dc2626)' }}
                                     >
                                         🔥 HOT
@@ -117,7 +122,7 @@ export default function ProductSection({ products }) {
                                 )}
                                 {product.badges?.includes('new') && (
                                     <span
-                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        className="w-fit text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap"
                                         style={{ background: 'linear-gradient(to right, #3b82f6, #2563eb)' }}
                                     >
                                         ✨ MỚI
@@ -125,7 +130,7 @@ export default function ProductSection({ products }) {
                                 )}
                                 {product.discountPercent > 0 && (
                                     <span
-                                        className="text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg"
+                                        className="w-fit text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg whitespace-nowrap"
                                         style={{ background: 'linear-gradient(to right, #dc2626, #b91c1c)' }}
                                     >
                                         -{product.discountPercent}%
@@ -160,7 +165,7 @@ export default function ProductSection({ products }) {
 
                             <div className="px-4 py-4 flex flex-col gap-2">
                                 <h3 className="text-gray-900 dark:text-white font-bold text-sm line-clamp-2 min-h-10">{product.name}</h3>
-                                <span className="text-xs font-normal text-gray-600 dark:text-[#9da6b9] flex items-center gap-1">
+                                <span className="text-xs font-normal text-gray-600 dark:text-[#9da6b9] flex items-center gap-1 -mt-1">
                                     <StarIcon className="text-yellow-400 inline-block mb-0.5" fontSize="small" />
                                     {product.rating}
                                     <span>{product.reviewCount > 0 && `(${product.reviewCount} đánh giá)`}</span>
@@ -176,7 +181,7 @@ export default function ProductSection({ products }) {
                                             </span>
                                         </>
                                     ) : (
-                                        <span className="text-[16px] font-medium text-gray-900 dark:text-white">
+                                        <span className="text-[16px] font-bold text-red-500 dark:text-[#da2128]">
                                             {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(originalPrice)}
                                         </span>
                                     )}

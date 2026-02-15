@@ -1,53 +1,86 @@
-import {
-    mockFlashSaleDeals,
-    mockPromoProducts,
-    mockCoupons,
-    mockPromoBanners
-} from '../data/mockDeals';
+import API_ENDPOINTS from '../constants/apiEndpoints';
 
-// Simulated API delay
-const delay = (ms = 300) => new Promise(resolve => setTimeout(resolve, ms));
+const handleResponse = async (response) => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    return data.data;
+};
 
 // Get all flash sale deals
 export const getFlashSaleDeals = async () => {
-    await delay();
-    return mockFlashSaleDeals;
+    try {
+        const response = await fetch(API_ENDPOINTS.DEALS.FLASH_SALE);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching flash sale deals:', error);
+        return [];
+    }
 };
 
 // Get all promotional products
 export const getPromoProducts = async () => {
-    await delay();
-    return mockPromoProducts;
+    try {
+        const response = await fetch(API_ENDPOINTS.DEALS.PROMO_PRODUCTS);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching promo products:', error);
+        return [];
+    }
 };
 
 // Get all coupons
 export const getCoupons = async () => {
-    await delay();
-    return mockCoupons;
+    try {
+        const response = await fetch(API_ENDPOINTS.DEALS.COUPONS);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching coupons:', error);
+        return [];
+    }
 };
 
-// Get promotional banners
+// Get promotional banners (keeping mock for now)
 export const getPromoBanners = async () => {
-    await delay();
-    return mockPromoBanners;
+    // This can be added to backend later if needed
+    return [];
+};
+
+// Get vouchers (keeping mock for now)
+export const getVouchers = async () => {
+    // This can be added to backend later if needed  
+    return [];
 };
 
 // Get deal by ID
 export const getDealById = async (id) => {
-    await delay();
-    return mockFlashSaleDeals.find(deal => deal.id === id);
+    // This can be added to backend later if needed
+    return null;
 };
 
 // Filter deals by category
 export const getDealsByCategory = async (category) => {
-    await delay();
-    return mockFlashSaleDeals.filter(deal => deal.category === category);
+    try {
+        const response = await fetch(API_ENDPOINTS.DEALS.FLASH_SALE);
+        const deals = await handleResponse(response);
+        return deals.filter(deal => deal.category === category);
+    } catch (error) {
+        console.error('Error fetching deals by category:', error);
+        return [];
+    }
 };
 
 // Get hot deals (high discount)
 export const getHotDeals = async () => {
-    await delay();
-    return mockFlashSaleDeals.filter(deal => deal.discount >= 30);
+    try {
+        const response = await fetch(API_ENDPOINTS.DEALS.FLASH_SALE);
+        const deals = await handleResponse(response);
+        return deals.filter(deal => deal.discount >= 30);
+    } catch (error) {
+        console.error('Error fetching hot deals:', error);
+        return [];
+    }
 };
 
 export default {

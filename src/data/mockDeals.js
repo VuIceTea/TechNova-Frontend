@@ -7,7 +7,7 @@ export const mockFlashSaleDeals = [
         originalPrice: 9990000,
         salePrice: 5990000,
         discount: 40,
-        image: 'https://cdn.tgdd.vn/Products/Images/54/313463/sony-wh-1000xm5-bac-650x650.png',
+        image: 'https://www.sony.com/image/6145c1d32e6ac8e63a46c912dc33c5bb?fmt=png-alpha&wid=1200&hei=1200',
         stock: 20,
         sold: 15,
         rating: 4.8,
@@ -20,7 +20,7 @@ export const mockFlashSaleDeals = [
         originalPrice: 34990000,
         salePrice: 28990000,
         discount: 15,
-        image: 'https://cdn.tgdd.vn/Products/Images/42/305658/iphone-15-pro-max-blue-thumbnew-600x600.jpg',
+        image: 'https://res.cloudinary.com/dfass7bhc/image/upload/v1769528471/iphone-15-pro-max-naturaltitanium-select-removebg-preview_kefkmq.png',
         stock: 50,
         sold: 420,
         rating: 4.9,
@@ -33,7 +33,7 @@ export const mockFlashSaleDeals = [
         originalPrice: 2650000,
         salePrice: 1850000,
         discount: 30,
-        image: 'https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K2-Pro-QMK-VIA-wireless-mechanical-keyboard-for-Mac-Windows-iOS-Android-with-hot-swappable-switch-red-blue-brown-Gateron-G-Pro-switch-red-blue-brown-with-RGB-backlight-aluminum-fram.jpg',
+        image: 'https://res.cloudinary.com/dfass7bhc/image/upload/v1769528264/ban-phim-co-keychron-k2-pro-removebg-preview_dnbdbq.png',
         stock: 10,
         sold: 90,
         rating: 4.7,
@@ -46,7 +46,7 @@ export const mockFlashSaleDeals = [
         originalPrice: 12290000,
         salePrice: 9290000,
         discount: 25,
-        image: 'https://cdn.tgdd.vn/Products/Images/7077/303891/apple-watch-s9-41mm-vien-nhom-day-silicone-1-3.jpg',
+        image: 'https://res.cloudinary.com/dfass7bhc/image/upload/v1769528415/vn_apple_watch_series_9_cell_41mm_silver_aluminum_storm_blue_sport_band_pdp_image_position-1_2-removebg-preview_pjnobq.png',
         stock: 100,
         sold: 20,
         rating: 4.6,
@@ -59,7 +59,7 @@ export const mockFlashSaleDeals = [
         originalPrice: 3000000,
         salePrice: 1500000,
         discount: 50,
-        image: 'https://cdn.tgdd.vn/Products/Images/86/226944/chuot-khong-day-gaming-logitech-g-pro-x-superlight-den-1-650x650.jpg',
+        image: 'https://resource.logitechg.com/content/dam/gaming/en/products/pro-x-superlight/pro-x-superlight-black-gallery-1.png?v=1',
         stock: 3,
         sold: 85,
         rating: 4.9,
@@ -74,7 +74,7 @@ export const mockPromoProducts = [
         name: 'iPad Air 5 M1 Wifi 64GB',
         category: 'tablet',
         price: 14490000,
-        image: 'https://cdn.tgdd.vn/Products/Images/522/247508/ipad-air-5-xanh-600x600.jpg',
+        image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-select-wifi-blue-202203?wid=940&hei=1112&fmt=jpeg&qlt=90&.v=1645068659173',
         rating: 4.5,
         reviews: 128,
         hasDiscount: false
@@ -84,7 +84,7 @@ export const mockPromoProducts = [
         name: 'Loa Bluetooth JBL Flip 6',
         category: 'speaker',
         price: 2490000,
-        image: 'https://cdn.tgdd.vn/Products/Images/2162/271723/loa-bluetooth-jbl-flip-6-xanh-duong-1-650x650.jpg',
+        image: 'https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw46cc380c/1_JBL_FLIP6_HERO_TEAL_29399_x1.png?sw=556&sh=680&sm=fit',
         rating: 5.0,
         reviews: 45,
         hasDiscount: false
@@ -94,7 +94,7 @@ export const mockPromoProducts = [
         name: 'Webcam Logitech C920 Pro HD',
         category: 'webcam',
         price: 1690000,
-        image: 'https://cdn.tgdd.vn/Products/Images/4746/220670/logitech-c920-den-1-1-650x650.jpg',
+        image: 'https://resource.logitech.com/w_544,h_466,ar_7:6,c_pad,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-1.png?v=1',
         rating: 4.0,
         reviews: 89,
         hasDiscount: false
@@ -104,7 +104,7 @@ export const mockPromoProducts = [
         name: 'Kính thực tế ảo Meta Quest 3 128GB',
         category: 'vr',
         price: 13990000,
-        image: 'https://cdn.tgdd.vn/Products/Images/7195/320186/kinh-thuc-te-ao-meta-quest-3-128gb-1-2-650x650.jpg',
+        image: 'https://res.cloudinary.com/dfass7bhc/image/upload/v1769528534/kinh-thuc-te-ao-meta-quest-3-128gb-removebg-preview_u9qiue.png',
         rating: 5.0,
         reviews: 12,
         hasDiscount: false
@@ -114,7 +114,7 @@ export const mockPromoProducts = [
         name: 'Sạc dự phòng Anker 20000mAh 20W',
         category: 'powerbank',
         price: 890000,
-        image: 'https://cdn.tgdd.vn/Products/Images/57/235836/sac-du-phong-polymer-20000mah-type-c-pd-anker-powercore-essential-a1268-den-1-650x650.jpg',
+        image: 'https://res.cloudinary.com/dfass7bhc/image/upload/v1769528590/a1287-removebg-preview_ojl09x.png',
         rating: 4.5,
         reviews: 230,
         hasDiscount: false
@@ -158,7 +158,7 @@ export const mockCoupons = [
     }
 ];
 
-// Mock data for promotional banners
+// Mock data for promotional banners 
 export const mockPromoBanners = [
     {
         id: 'banner-1',

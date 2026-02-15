@@ -71,11 +71,9 @@ const AddressBook = () => {
       <main className="grow px-3 md:px-4 lg:px-6 xl:px-8 py-8">
         <div className="max-w-400 mx-auto flex flex-col gap-6">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6">
-            <Link to="/" className="hover:text-[#135bec]">Trang chủ</Link>
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
-            <Link to="/profile" className="hover:text-[#135bec]">Tài khoản</Link>
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
+          <nav className="flex items-center text-sm text-slate-500 dark:text-slate-400">
+            <Link className="hover:text-[#135bec] dark:hover:text-white transition-colors" to="/">Trang chủ</Link>
+            <span className="mx-2">/</span>
             <span className="text-slate-900 dark:text-white font-medium">Sổ địa chỉ</span>
           </nav>
 

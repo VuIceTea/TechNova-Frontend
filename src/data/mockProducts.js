@@ -954,7 +954,7 @@ export const mockProducts = [
         },
         price: 4490000,
         stock: 35,
-        image: "https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw0f3b5f7b/JBL_Charge5_Hero_Blue-1605x1605px.png?sw=535&sh=535",
+        image: "https://i.rtings.com/assets/products/sVaiMndk/jbl-charge-5/design-medium.jpg?format=auto",
         gallery: [
             "https://i.rtings.com/assets/products/sVaiMndk/jbl-charge-5/design-medium.jpg?format=auto",
             "https://www.cnet.com/a/img/resize/87c90c32f89d68929800e1f50ae223d357be73d8/hub/2021/01/07/4b75e972-2142-48b2-94db-3919b14d5f26/jbl-charge-5.png?auto=webp&fit=crop&height=675&width=1200",
@@ -991,7 +991,7 @@ export const mockProducts = [
         },
         price: 9490000,
         stock: 15,
-        image: "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/content_pages/headphones/qc_ultra/assets/images/product_images/QCUH_Black_PDP_hero.png/jcr:content/renditions/cq5dam.web.1920.1920.png",
+        image: "https://www.cnet.com/a/img/resize/3abd8c492ec5abf4dd80dba42545b827f731e0f9/hub/2023/09/14/49921644-463c-4a06-bc85-dc8b362bba81/bose-quietcomfort-ultra-headphones-1.jpg?auto=webp&fit=crop&height=900&width=1200",
         gallery: [
             "https://www.cnet.com/a/img/resize/3abd8c492ec5abf4dd80dba42545b827f731e0f9/hub/2023/09/14/49921644-463c-4a06-bc85-dc8b362bba81/bose-quietcomfort-ultra-headphones-1.jpg?auto=webp&fit=crop&height=900&width=1200",
             "https://www.cnet.com/a/img/resize/c9d8fcca10fcf12be1f26cff5192948c5e033be2/hub/2023/10/05/c0041317-8d33-4e63-a688-211449b763c3/bose-quietcomfort-ultra-earbuds-silver2.jpg?auto=webp&fit=crop&height=362&width=644",
@@ -1062,7 +1062,7 @@ export const mockProducts = [
         },
         price: 21990000,
         stock: 20,
-        image: "https://www.apple.com/ecc-shared/apple-watch-ultra-2/images/meta/apple-watch-ultra-2__epn0vw7597qu_og.png",
+        image: "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-hero-230912_Full-Bleed-Image.jpg.large.jpg",
         gallery: [
             "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-hero-230912_Full-Bleed-Image.jpg.large.jpg",
             "https://www.apple.com/newsroom/images/2023/09/apple-unveils-apple-watch-ultra-2/article/Apple-Watch-Ultra-2-side-button-Digital-Crown-230912_Full-Bleed-Image.jpg.large.jpg",
@@ -1128,7 +1128,7 @@ export const mockProducts = [
         },
         price: 12490000,
         stock: 18,
-        image: "https://static.garmincdn.com/en_US/prod/664098/010-02885-11.png",
+        image: "https://garminrumors.com/wp-content/uploads/elementor/thumbs/Venu-3-Series-scaled-r3g2kaiqe016rf7d4ov2hdcib1e6vu3qz46i4ko9io.jpg",
         gallery: [
             "https://garminrumors.com/wp-content/uploads/elementor/thumbs/Venu-3-Series-scaled-r3g2kaiqe016rf7d4ov2hdcib1e6vu3qz46i4ko9io.jpg",
             "https://cdn.mos.cms.futurecdn.net/SicvCQA8CsHUG3TXoyQdmj.jpeg",
@@ -1197,7 +1197,7 @@ export const mockProducts = [
         },
         price: 4490000,
         stock: 30,
-        image: "https://xiaomiplanet.sk/wp-content/uploads/2023/10/xiaomi-watch-s3-oficialne-foto.jpg",
+        image: "https://www.vopmart.com/media/magefan_blog/xiaomi-watch-s3-review-01.jpg",
         gallery: [
             "https://www.vopmart.com/media/magefan_blog/xiaomi-watch-s3-review-01.jpg",
             "https://www.gadgetmatch.com/wp-content/uploads/2024/03/xiaomi-watch-s3-barcelona-plus-20240306-10.jpg",

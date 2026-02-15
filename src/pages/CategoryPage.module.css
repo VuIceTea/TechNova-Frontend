@@ -103,11 +103,6 @@
   background-position: right 8px center;
 }
 
-.sortSelect:focus {
-  outline: 2px solid #135bec;
-  outline-offset: 2px;
-}
-
 /* Active Filters Chips */
 .activeFilters {
   display: flex;

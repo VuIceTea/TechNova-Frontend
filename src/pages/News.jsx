@@ -14,6 +14,8 @@ const News = () => {
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
 
+    const itemsPerPage = 9;
+
     const categoryScrollRef = useRef(null);
 
     const categories = ['Tất cả', 'Công nghệ AI', 'Thực tế ảo', 'Di động', 'Laptop', 'Smart Home', 'Thủ thuật'];
@@ -80,6 +82,7 @@ const News = () => {
         }
 
         setFilteredNews(filtered);
+        setCurrentPage(1); // Reset về trang 1 khi filter thay đổi
     }, [searchQuery, selectedCategory, sortBy, newsList]);
 
     const getTimeAgo = (dateString) => {
@@ -102,6 +105,12 @@ const News = () => {
     const featuredNews = filteredNews.find(news => news.isFeatured) || filteredNews[0];
     const regularNews = filteredNews.filter(news => !news.isFeatured || news.id !== featuredNews?.id);
 
+    // Tính toán pagination
+    const totalPages = Math.ceil(regularNews.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const paginatedNews = regularNews.slice(startIndex, endIndex);
+
     const handleNewsletterSubmit = (e) => {
         e.preventDefault();
         console.log('Newsletter signup:', email);
@@ -118,6 +127,89 @@ const News = () => {
                 behavior: 'smooth'
             });
         }
+    };
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const renderPaginationButtons = () => {
+        const buttons = [];
+        const maxVisiblePages = 5;
+
+        if (totalPages <= maxVisiblePages) {
+            // Hiển thị tất cả nếu ít hơn hoặc bằng maxVisiblePages
+            for (let i = 1; i <= totalPages; i++) {
+                buttons.push(
+                    <button
+                        key={i}
+                        onClick={() => handlePageChange(i)}
+                        className={`flex items-center justify-center w-10 h-10 rounded-lg ${currentPage === i
+                            ? 'bg-[#135bec] text-white font-bold shadow-lg shadow-blue-500/20'
+                            : 'border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white'
+                            } transition-colors`}
+                    >
+                        {i}
+                    </button>
+                );
+            }
+        } else {
+            // Logic phức tạp hơn cho nhiều trang
+            buttons.push(
+                <button
+                    key={1}
+                    onClick={() => handlePageChange(1)}
+                    className={`flex items-center justify-center w-10 h-10 rounded-lg ${currentPage === 1
+                        ? 'bg-[#135bec] text-white font-bold shadow-lg shadow-blue-500/20'
+                        : 'border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white'
+                        } transition-colors`}
+                >
+                    1
+                </button>
+            );
+
+            if (currentPage > 3) {
+                buttons.push(<span key="dots1" className="text-gray-500 dark:text-[#9da6b9] px-2">...</span>);
+            }
+
+            const start = Math.max(2, currentPage - 1);
+            const end = Math.min(totalPages - 1, currentPage + 1);
+
+            for (let i = start; i <= end; i++) {
+                buttons.push(
+                    <button
+                        key={i}
+                        onClick={() => handlePageChange(i)}
+                        className={`flex items-center justify-center w-10 h-10 rounded-lg ${currentPage === i
+                            ? 'bg-[#135bec] text-white font-bold shadow-lg shadow-blue-500/20'
+                            : 'border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white'
+                            } transition-colors`}
+                    >
+                        {i}
+                    </button>
+                );
+            }
+
+            if (currentPage < totalPages - 2) {
+                buttons.push(<span key="dots2" className="text-gray-500 dark:text-[#9da6b9] px-2">...</span>);
+            }
+
+            buttons.push(
+                <button
+                    key={totalPages}
+                    onClick={() => handlePageChange(totalPages)}
+                    className={`flex items-center justify-center w-10 h-10 rounded-lg ${currentPage === totalPages
+                        ? 'bg-[#135bec] text-white font-bold shadow-lg shadow-blue-500/20'
+                        : 'border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white'
+                        } transition-colors`}
+                >
+                    {totalPages}
+                </button>
+            );
+        }
+
+        return buttons;
     };
 
     return (
@@ -142,11 +234,11 @@ const News = () => {
                     <section className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between sticky top-18 z-40 bg-[#f6f6f8]/95 dark:bg-[#101622]/95 backdrop-blur-sm py-4 -my-4 border-b border-[#282e39] lg:border-none lg:bg-transparent lg:static">
                         {/* Search Bar */}
                         <div className="relative w-full lg:max-w-md group">
-                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 dark:text-[#9da6b9] group-focus-within:text-[#135bec] transition-colors">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500 dark:text-[#9da6b9] transition-colors">
                                 <span className="material-symbols-outlined">search</span>
                             </div>
                             <input
-                                className="block w-full p-3 pl-10 text-sm text-gray-900 dark:text-white border border-gray-200 dark:border-[#282e39] rounded-lg bg-white dark:bg-[#1c1f27] focus:ring-[#135bec] focus:border-[#135bec] placeholder-gray-500 dark:placeholder-[#9da6b9] transition-all outline-none"
+                                className="block w-full p-3 pl-10 text-sm text-gray-900 dark:text-white border border-gray-200 dark:border-[#282e39] rounded-lg bg-white dark:bg-[#1c1f27] placeholder-gray-500 dark:placeholder-[#9da6b9] transition-all outline-none focus:outline-none focus:ring-0 focus:border-gray-200 dark:focus:border-[#282e39]"
                                 placeholder="Tìm kiếm bài viết, chủ đề..."
                                 type="text"
                                 value={searchQuery}
@@ -286,14 +378,14 @@ const News = () => {
                     )}
 
                     {/* News Grid */}
-                    <section className={viewMode === 'grid' 
+                    <section className={viewMode === 'grid'
                         ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-4"
                         : "flex flex-col gap-6 mt-4"
                     }>
-                        {regularNews.map((news) => (
+                        {paginatedNews.map((news) => (
                             viewMode === 'grid' ? (
                                 // Grid View
-                                <article key={news.id} className="flex flex-col gap-4 group cursor-pointer h-full">
+                                <article key={news.id} className="flex flex-col gap-4 group cursor-pointer h-full bg-white dark:bg-[#1c1f27] rounded-xl border border-gray-200 dark:border-[#282e39] hover:border-[#135bec]/50 transition-all p-4">
                                     {/* Image */}
                                     <Link to={`/news/${news.slug}`}>
                                         <div className="overflow-hidden rounded-xl h-56 w-full bg-gray-200 dark:bg-[#282e39] relative border border-gray-200 dark:border-[#282e39]">
@@ -406,36 +498,27 @@ const News = () => {
                     </section>
 
                     {/* Pagination */}
-                    <div className="flex items-center justify-center gap-2 py-8">
-                        <button
-                            onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
-                            disabled={currentPage === 1}
-                            className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            <span className="material-symbols-outlined text-[20px]">chevron_left</span>
-                        </button>
+                    {totalPages > 1 && (
+                        <div className="flex items-center justify-center gap-2 py-8">
+                            <button
+                                onClick={() => handlePageChange(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <span className="material-symbols-outlined text-[20px]">chevron_left</span>
+                            </button>
 
-                        <button className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#135bec] text-white font-bold shadow-lg shadow-blue-500/20">
-                            1
-                        </button>
-                        <button className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors">
-                            2
-                        </button>
-                        <button className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors">
-                            3
-                        </button>
-                        <span className="text-gray-500 dark:text-[#9da6b9] px-2">...</span>
-                        <button className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors">
-                            8
-                        </button>
+                            {renderPaginationButtons()}
 
-                        <button
-                            onClick={() => setCurrentPage(prev => prev + 1)}
-                            className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors"
-                        >
-                            <span className="material-symbols-outlined text-[20px]">chevron_right</span>
-                        </button>
-                    </div>
+                            <button
+                                onClick={() => handlePageChange(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                                className="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-[#282e39] bg-white dark:bg-[#1c1f27] text-gray-500 dark:text-[#9da6b9] hover:bg-gray-100 dark:hover:bg-[#282e39] hover:text-gray-900 dark:hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                                <span className="material-symbols-outlined text-[20px]">chevron_right</span>
+                            </button>
+                        </div>
+                    )}
                 </div>
             </main>
         </div>

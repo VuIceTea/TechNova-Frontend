@@ -26,11 +26,11 @@ const Orders = () => {
   };
 
   const handleViewDetails = (orderId) => {
-    alert(`Xem chi tiết đơn hàng #${orderId}\n\nChức năng chi tiết đơn hàng sẽ được phát triển ở phiên bản tiếp theo.`);
+    navigate(`/orders/${orderId}`);
   };
 
   const handleTrackOrder = (orderId) => {
-    alert(`Theo dõi đơn hàng #${orderId}\n\nĐơn hàng đang trên đường giao đến bạn.\nDự kiến giao: Hôm nay trước 6:00 PM`);
+    navigate(`/orders/${orderId}`);
   };
 
   const getStatusColor = (status) => {
@@ -64,15 +64,10 @@ const Orders = () => {
       <main className="grow px-3 md:px-4 lg:px-6 xl:px-8 py-8">
         <div className="max-w-400 mx-auto flex flex-col gap-6">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-6">
-            <Link to="/" className="hover:text-[#135bec] flex items-center gap-1 transition-colors">
-              <span className="material-symbols-outlined text-base">home</span>
-              Trang chủ
-            </Link>
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
-            <Link to="/profile" className="hover:text-[#135bec] transition-colors">Tài khoản</Link>
-            <span className="material-symbols-outlined text-xs">chevron_right</span>
-            <span className="text-slate-900 dark:text-slate-100">Đơn hàng của tôi</span>
+          <nav className="flex items-center text-sm text-slate-500 dark:text-slate-400">
+            <Link className="hover:text-[#135bec] dark:hover:text-white transition-colors" to="/">Trang chủ</Link>
+            <span className="mx-2">/</span>
+            <span className="text-slate-900 dark:text-white font-medium">Đơn hàng của tôi</span>
           </nav>
 
           <div className="flex flex-col lg:flex-row gap-8">
